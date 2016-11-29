@@ -1,6 +1,6 @@
 namespace Modulo6._forms
 {
-    partial class frmStudent
+    partial class frmAlumno
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Modulo6._forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStudent));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAlumno));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();

@@ -10,9 +10,9 @@ using Modulo6.BUL;
 using Modulo6.DAL;
 namespace Modulo6._forms
 {
-    public partial class frmStudent : Form
+    public partial class frmAlumno : Form
     {
-        public frmStudent()
+        public frmAlumno()
         {
             InitializeComponent();
         }

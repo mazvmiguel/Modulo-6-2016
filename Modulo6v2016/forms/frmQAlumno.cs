@@ -24,7 +24,7 @@ namespace Modulo6._forms
 
         private void btn_Modify_Click(object sender, EventArgs e)
         {
-            _forms.frmStudent frm_Student = new frmStudent();
+            _forms.frmAlumno frm_Student = new frmAlumno();
 
 
             frm_Student.str = "Modificando";
@@ -34,7 +34,7 @@ namespace Modulo6._forms
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            _forms.frmStudent frm_Student = new frmStudent();
+            _forms.frmAlumno frm_Student = new frmAlumno();
 
 
             frm_Student.str = "Agregando";

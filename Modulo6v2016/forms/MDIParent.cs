@@ -135,34 +135,51 @@ namespace Modulo6._forms
             switch (lvShortcuts.Items[lvShortcuts.FocusedItem.Index].SubItems[0].Text)
             {
                 case "Periodos":
-                    frmQPeriodo frm_QPeriodo = new frmQPeriodo();
-                    frm_QPeriodo.Show();
+                    //frmQPeriodo frm_QPeriodo = new frmQPeriodo();
+                    //frm_QPeriodo.Show();
+                    frmPeriodo Periodo = new frmPeriodo();
+                    Periodo.str = "Modificando";
+                    Periodo.Show();
                     break;
                 case "Alumnos":
-                    frmQstudent frm_Qstudent = new frmQstudent();
-                    frm_Qstudent.Show();
+                    //frmQstudent frm_Qstudent = new frmQstudent();
+                    //frm_Qstudent.Show();
+                    frmAlumno Alumno = new frmAlumno();
+                    Alumno.str = "Modificando";
+                    Alumno.Show();
+
                     break;
 
                 case "Materias":
-                    frmQMateria frm_QMateria = new frmQMateria();
-                    frm_QMateria.Show();
+                    //frmQMateria frm_QMateria = new frmQMateria();
+                    //frm_QMateria.Show();
+                    frmMateria Materia = new frmMateria();
+                    Materia.str = "Modificando";
+                    Materia.Show();
                     break;
 
                 case "Maestros":
-                    frmQMaestro frm_qMas = new frmQMaestro();
-                    frm_qMas.Show ();
+                    //frmQMaestro frm_qMas = new frmQMaestro();
+                    //frm_qMas.Show ();
+                    frmMaestro Maestro = new frmMaestro();
+                    Maestro.str = "Modificando";
+                    Maestro.Show();
                     break;
 
                 case "Grupos":
-                    frmQGrupo frm_qGru = new frmQGrupo();
-                    frm_qGru.Show();
-                  
+                    //frmQGrupo frm_qGru = new frmQGrupo();
+                    //frm_qGru.Show();
+                    frmGrupo Grupo = new frmGrupo();
+                    Grupo.str = "Modificando";
+                    Grupo.Show();
                     break;
 
                 case "Cursos":
-                    frmQCurso frm_qcur = new frmQCurso();
-                    frm_qcur.Show();
-
+                    //frmQCurso frm_qcur = new frmQCurso();
+                    //frm_qcur.Show();
+                    frmCurso Curso = new frmCurso();
+                    Curso.str = "Modificando";
+                    Curso.Show();
                     break;
 
                 case "Cargas Masivas":

@@ -43,7 +43,7 @@ namespace Modulo6._forms
                 }
             }
 
-            frmStudent frm_Student = new frmStudent();
+            frmAlumno frm_Student = new frmAlumno();
 
             // =========================================
             panel5.Visible = false;
