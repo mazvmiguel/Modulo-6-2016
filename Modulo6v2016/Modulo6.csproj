@@ -1,0 +1,461 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{637AB0B6-E629-4B47-8228-77E5959ECA90}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Modulo6</RootNamespace>
+    <AssemblyName>Modulo6</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BUL\clsClave.cs" />
+    <Compile Include="BUL\clsCurso.cs" />
+    <Compile Include="BUL\clsEvaluacion.cs" />
+    <Compile Include="BUL\clsGrupo.cs" />
+    <Compile Include="BUL\clsMaestro.cs" />
+    <Compile Include="BUL\clsMateria.cs" />
+    <Compile Include="BUL\clsAlumno.cs" />
+    <Compile Include="DAL\cLsImageList.cs" />
+    <Compile Include="DAL\clsODBC.cs" />
+    <Compile Include="BUL\clsPeriodo.cs" />
+    <Compile Include="DAL\clsVariable.cs" />
+    <Compile Include="DAL\cls_myFunctions.cs" />
+    <Compile Include="forms\frmAboutUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmAboutUs.Designer.cs">
+      <DependentUpon>frmAboutUs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmAdminSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmAdminSet.Designer.cs">
+      <DependentUpon>frmAdminSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmAgreement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmAgreement.Designer.cs">
+      <DependentUpon>frmAgreement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmClave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmClave.Designer.cs">
+      <DependentUpon>frmClave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmEjercicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmEjercicio.Designer.cs">
+      <DependentUpon>frmEjercicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmGrupo.Designer.cs">
+      <DependentUpon>frmGrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmCurso.Designer.cs">
+      <DependentUpon>frmCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmImportacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmImportacion.designer.cs">
+      <DependentUpon>frmImportacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmPeriodo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmPeriodo.Designer.cs">
+      <DependentUpon>frmPeriodo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmGrafica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmGrafica.Designer.cs">
+      <DependentUpon>frmGrafica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmMaestro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmMaestro.Designer.cs">
+      <DependentUpon>frmMaestro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmExp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmExp.Designer.cs">
+      <DependentUpon>frmExp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmExpDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmExpDetail.Designer.cs">
+      <DependentUpon>frmExpDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmFindExp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmFindExp.Designer.cs">
+      <DependentUpon>frmFindExp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmQGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmQGrupo.Designer.cs">
+      <DependentUpon>frmQGrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmQCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmQCurso.Designer.cs">
+      <DependentUpon>frmQCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmQPeriodo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmQPeriodo.Designer.cs">
+      <DependentUpon>frmQPeriodo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmQMaestro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmQMaestro.Designer.cs">
+      <DependentUpon>frmQMaestro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmQexam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmQexam.Designer.cs">
+      <DependentUpon>frmQexam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmQAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmQAlumno.Designer.cs">
+      <DependentUpon>frmQAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmQMateria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmQMateria.Designer.cs">
+      <DependentUpon>frmQMateria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmAlumno.Designer.cs">
+      <DependentUpon>frmAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmMateria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmMateria.Designer.cs">
+      <DependentUpon>frmMateria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frm_login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frm_login.Designer.cs">
+      <DependentUpon>frm_login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\MDIParent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\MDIParent.Designer.cs">
+      <DependentUpon>MDIParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Welcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Welcome.Designer.cs">
+      <DependentUpon>Welcome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="forms\frmAboutUs.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAboutUs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmAdminSet.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAdminSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmAgreement.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAgreement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmClave.resx">
+      <DependentUpon>frmClave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmEjercicio.resx">
+      <DependentUpon>frmEjercicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmGrupo.resx">
+      <DependentUpon>frmGrupo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmCurso.resx">
+      <DependentUpon>frmCurso.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmImportacion.resx">
+      <DependentUpon>frmImportacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmPeriodo.resx">
+      <DependentUpon>frmPeriodo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmGrafica.resx">
+      <DependentUpon>frmGrafica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmMaestro.resx">
+      <DependentUpon>frmMaestro.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmExp.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmExp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmExpDetail.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmExpDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmFindExp.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmFindExp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmQGrupo.resx">
+      <DependentUpon>frmQGrupo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmQCurso.resx">
+      <DependentUpon>frmQCurso.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmQPeriodo.resx">
+      <DependentUpon>frmQPeriodo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmQMaestro.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmQMaestro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmQexam.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmQexam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmQAlumno.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmQAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmQMateria.resx">
+      <DependentUpon>frmQMateria.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmAlumno.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmMateria.resx">
+      <DependentUpon>frmMateria.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frm_login.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frm_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\MDIParent.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MDIParent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Welcome.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Welcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\175_inpage-standing-woman.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\title.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginfinal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_title.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\title form.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\school management.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\class.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add record.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modify record.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\class title.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\class title1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sidebar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\small form.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\student.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employee.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\listshadow.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exp head.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exam detail.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exp detail.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\top.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\subject small.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exam.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emp_att.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\claveexamen.png" />
+    <Content Include="Resources\curso.png" />
+    <Content Include="Resources\evaluacion.png" />
+    <Content Include="Resources\calidad.png" />
+    <Content Include="Resources\upload.gif" />
+    <Content Include="Resources\Upload_Document-128.png" />
+    <Content Include="Resources\user_group.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
