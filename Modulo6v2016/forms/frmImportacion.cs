@@ -22,7 +22,8 @@ namespace Modulo6._forms
         public frmImportacion()
         {
             InitializeComponent();
-        }
+           
+         }
 
         public string EntidadACargar = "";
         private string Excel03ConString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'";
@@ -743,6 +744,12 @@ namespace Modulo6._forms
 
         private void frmImportacion_Load(object sender, EventArgs e)
         {
+            if (EntidadACargar.Length > 0)
+            {
+                cmbEntidades.Text = EntidadACargar;
+                cmbEntidades.Enabled = false;
+                lblEntidad.Text = EntidadACargar;
+            }
 
         }
 

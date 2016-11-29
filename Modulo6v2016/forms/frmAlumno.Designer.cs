@@ -67,6 +67,8 @@ namespace Modulo6._forms
             this.lstv_Student = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btn_Carga = new System.Windows.Forms.ToolStripButton();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -323,6 +325,8 @@ namespace Modulo6._forms
             this.side4,
             this.btn_Cancel,
             this.toolStripSeparator7,
+            this.btn_Carga,
+            this.toolStripSeparator1,
             this.btn_close});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -446,6 +450,20 @@ namespace Modulo6._forms
             this.columnHeader5.Text = "Nombre";
             this.columnHeader5.Width = 150;
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
+            // 
+            // btn_Carga
+            // 
+            this.btn_Carga.Image = global::Modulo6.Properties.Resources.Upload_Document_128;
+            this.btn_Carga.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Carga.Name = "btn_Carga";
+            this.btn_Carga.Size = new System.Drawing.Size(106, 28);
+            this.btn_Carga.Text = "&Carga Masiva";
+            this.btn_Carga.Click += new System.EventHandler(this.btn_Carga_Click);
+            // 
             // frmAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -519,5 +537,7 @@ namespace Modulo6._forms
         private System.Windows.Forms.ListView lstv_Student;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ToolStripButton btn_Carga;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }

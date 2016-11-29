@@ -159,6 +159,13 @@ namespace Modulo6._forms
             this.cls_Con.list_DataView("select AlumnoId, Alumno from tAlumno where  Alumno Like '%" + this.txt_Find.Text.Trim() + "%'  ORDER BY Alumno", this.lstv_Student);
         }
 
+        private void btn_Carga_Click(object sender, EventArgs e)
+        {
+            frmImportacion frmImportarAlumno = new frmImportacion();
+            frmImportarAlumno.EntidadACargar = "Alumnos";
+            frmImportarAlumno.ShowDialog();
+        }
+
         private void lstv_Student_SelectedIndexChanged(object sender, EventArgs e)
         {
             /*
