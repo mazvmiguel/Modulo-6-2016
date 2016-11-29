@@ -38,22 +38,22 @@ namespace Modulo6._forms
             this.txtMateria = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.btn_Add = new System.Windows.Forms.ToolStripButton();
             this.side1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btn_Edit = new System.Windows.Forms.ToolStripButton();
             this.side2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btn_Delete = new System.Windows.Forms.ToolStripButton();
             this.side3 = new System.Windows.Forms.ToolStripSeparator();
+            this.btn_Refresh = new System.Windows.Forms.ToolStripButton();
             this.side4 = new System.Windows.Forms.ToolStripSeparator();
+            this.btn_cancel = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btn_close = new System.Windows.Forms.ToolStripButton();
             this.panel5 = new System.Windows.Forms.Panel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label20 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.txt_Find = new System.Windows.Forms.TextBox();
-            this.btn_Add = new System.Windows.Forms.ToolStripButton();
-            this.btn_Edit = new System.Windows.Forms.ToolStripButton();
-            this.btn_Delete = new System.Windows.Forms.ToolStripButton();
-            this.btn_Refresh = new System.Windows.Forms.ToolStripButton();
-            this.btn_cancel = new System.Windows.Forms.ToolStripButton();
-            this.btn_close = new System.Windows.Forms.ToolStripButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lstv_Subject = new System.Windows.Forms.ListView();
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -181,30 +181,84 @@ namespace Modulo6._forms
             this.toolStrip2.TabIndex = 50;
             this.toolStrip2.Text = "toolStrip2";
             // 
+            // btn_Add
+            // 
+            this.btn_Add.Image = ((System.Drawing.Image)(resources.GetObject("btn_Add.Image")));
+            this.btn_Add.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Add.Name = "btn_Add";
+            this.btn_Add.Size = new System.Drawing.Size(80, 28);
+            this.btn_Add.Text = "&Agregar ";
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
+            // 
             // side1
             // 
             this.side1.Name = "side1";
             this.side1.Size = new System.Drawing.Size(6, 31);
+            // 
+            // btn_Edit
+            // 
+            this.btn_Edit.Image = global::Modulo6.Properties.Resources.save;
+            this.btn_Edit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Edit.Name = "btn_Edit";
+            this.btn_Edit.Size = new System.Drawing.Size(77, 28);
+            this.btn_Edit.Text = "&Guardar";
+            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
             // side2
             // 
             this.side2.Name = "side2";
             this.side2.Size = new System.Drawing.Size(6, 31);
             // 
+            // btn_Delete
+            // 
+            this.btn_Delete.Image = ((System.Drawing.Image)(resources.GetObject("btn_Delete.Image")));
+            this.btn_Delete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(67, 28);
+            this.btn_Delete.Text = "&Borrar";
+            this.btn_Delete.ToolTipText = "Delete";
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
+            // 
             // side3
             // 
             this.side3.Name = "side3";
             this.side3.Size = new System.Drawing.Size(6, 31);
+            // 
+            // btn_Refresh
+            // 
+            this.btn_Refresh.Image = ((System.Drawing.Image)(resources.GetObject("btn_Refresh.Image")));
+            this.btn_Refresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Refresh.Name = "btn_Refresh";
+            this.btn_Refresh.Size = new System.Drawing.Size(83, 28);
+            this.btn_Refresh.Text = "&Refrescar";
+            this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
             // 
             // side4
             // 
             this.side4.Name = "side4";
             this.side4.Size = new System.Drawing.Size(6, 31);
             // 
+            // btn_cancel
+            // 
+            this.btn_cancel.Image = ((System.Drawing.Image)(resources.GetObject("btn_cancel.Image")));
+            this.btn_cancel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Size = new System.Drawing.Size(81, 28);
+            this.btn_cancel.Text = "&Cancelar";
+            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 31);
+            // 
+            // btn_close
+            // 
+            this.btn_close.Image = ((System.Drawing.Image)(resources.GetObject("btn_close.Image")));
+            this.btn_close.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(67, 28);
+            this.btn_close.Text = "&Cerrar";
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // panel5
             // 
@@ -266,60 +320,6 @@ namespace Modulo6._forms
             this.txt_Find.Size = new System.Drawing.Size(238, 20);
             this.txt_Find.TabIndex = 50;
             this.txt_Find.TextChanged += new System.EventHandler(this.txt_Find_TextChanged);
-            // 
-            // btn_Add
-            // 
-            this.btn_Add.Image = ((System.Drawing.Image)(resources.GetObject("btn_Add.Image")));
-            this.btn_Add.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_Add.Name = "btn_Add";
-            this.btn_Add.Size = new System.Drawing.Size(80, 28);
-            this.btn_Add.Text = "&Agregar ";
-            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
-            // 
-            // btn_Edit
-            // 
-            this.btn_Edit.Image = ((System.Drawing.Image)(resources.GetObject("btn_Edit.Image")));
-            this.btn_Edit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_Edit.Name = "btn_Edit";
-            this.btn_Edit.Size = new System.Drawing.Size(65, 28);
-            this.btn_Edit.Text = "&Editar";
-            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
-            // 
-            // btn_Delete
-            // 
-            this.btn_Delete.Image = ((System.Drawing.Image)(resources.GetObject("btn_Delete.Image")));
-            this.btn_Delete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(67, 28);
-            this.btn_Delete.Text = "&Borrar";
-            this.btn_Delete.ToolTipText = "Delete";
-            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
-            // 
-            // btn_Refresh
-            // 
-            this.btn_Refresh.Image = ((System.Drawing.Image)(resources.GetObject("btn_Refresh.Image")));
-            this.btn_Refresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_Refresh.Name = "btn_Refresh";
-            this.btn_Refresh.Size = new System.Drawing.Size(83, 28);
-            this.btn_Refresh.Text = "&Refrescar";
-            this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
-            // 
-            // btn_cancel
-            // 
-            this.btn_cancel.Image = ((System.Drawing.Image)(resources.GetObject("btn_cancel.Image")));
-            this.btn_cancel.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.Size = new System.Drawing.Size(81, 28);
-            this.btn_cancel.Text = "&Cancelar";
-            // 
-            // btn_close
-            // 
-            this.btn_close.Image = ((System.Drawing.Image)(resources.GetObject("btn_close.Image")));
-            this.btn_close.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(67, 28);
-            this.btn_close.Text = "&Cerrar";
-            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // panel4
             // 

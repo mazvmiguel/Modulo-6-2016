@@ -228,11 +228,11 @@ namespace Modulo6._forms
             // 
             // btn_Edit
             // 
-            this.btn_Edit.Image = ((System.Drawing.Image)(resources.GetObject("btn_Edit.Image")));
+            this.btn_Edit.Image = global::Modulo6.Properties.Resources.save;
             this.btn_Edit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_Edit.Name = "btn_Edit";
-            this.btn_Edit.Size = new System.Drawing.Size(65, 28);
-            this.btn_Edit.Text = "&Editar";
+            this.btn_Edit.Size = new System.Drawing.Size(77, 28);
+            this.btn_Edit.Text = "&Guardar";
             this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
             // side2
@@ -468,7 +468,7 @@ namespace Modulo6._forms
             this.rdo_id.Text = "Por ID";
             this.rdo_id.UseVisualStyleBackColor = true;
             // 
-            // frmEmployee
+            // frmMaestro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -484,7 +484,7 @@ namespace Modulo6._forms
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
-            this.Name = "frmEmployee";
+            this.Name = "frmMaestro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Maestros";
             this.Load += new System.EventHandler(this.frmEmployee_Load);

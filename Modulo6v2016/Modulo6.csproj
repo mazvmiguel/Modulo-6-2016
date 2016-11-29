@@ -446,6 +446,7 @@
     <Content Include="Resources\curso.png" />
     <Content Include="Resources\evaluacion.png" />
     <Content Include="Resources\calidad.png" />
+    <Content Include="Resources\save.png" />
     <Content Include="Resources\upload.gif" />
     <Content Include="Resources\Upload_Document-128.png" />
     <Content Include="Resources\user_group.png" />

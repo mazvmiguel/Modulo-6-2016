@@ -62,6 +62,8 @@ namespace Modulo6._forms
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -71,8 +73,6 @@ namespace Modulo6._forms
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -246,11 +246,11 @@ namespace Modulo6._forms
             // 
             // btn_Edit
             // 
-            this.btn_Edit.Image = ((System.Drawing.Image)(resources.GetObject("btn_Edit.Image")));
+            this.btn_Edit.Image = global::Modulo6.Properties.Resources.save;
             this.btn_Edit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_Edit.Name = "btn_Edit";
-            this.btn_Edit.Size = new System.Drawing.Size(65, 28);
-            this.btn_Edit.Text = "&Editar";
+            this.btn_Edit.Size = new System.Drawing.Size(77, 28);
+            this.btn_Edit.Text = "&Guardar";
             this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
             // side2
@@ -365,6 +365,14 @@ namespace Modulo6._forms
             // 
             this.columnHeader5.Text = "Activo";
             // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "PlanId";
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Plan";
+            // 
             // panel1
             // 
             this.panel1.BackgroundImage = global::Modulo6.Properties.Resources.title_form;
@@ -473,14 +481,6 @@ namespace Modulo6._forms
             this.label2.Size = new System.Drawing.Size(237, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Introduzca todas sus Períodos aquí";
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "PlanId";
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Plan";
             // 
             // frmPeriodo
             // 

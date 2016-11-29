@@ -31,15 +31,15 @@ namespace Modulo6._forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAlumno));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtAlumno = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtAlumnoId = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label20 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.txt_Find = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtAlumno = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtAlumnoId = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -87,6 +87,40 @@ namespace Modulo6._forms
             this.groupBox1.Size = new System.Drawing.Size(607, 79);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(6, 7);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(58, 13);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Matricula";
+            // 
+            // txtAlumno
+            // 
+            this.txtAlumno.Location = new System.Drawing.Point(89, 23);
+            this.txtAlumno.Name = "txtAlumno";
+            this.txtAlumno.Size = new System.Drawing.Size(312, 20);
+            this.txtAlumno.TabIndex = 3;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(88, 8);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 13);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Nombre";
+            // 
+            // txtAlumnoId
+            // 
+            this.txtAlumnoId.Location = new System.Drawing.Point(6, 23);
+            this.txtAlumnoId.Name = "txtAlumnoId";
+            this.txtAlumnoId.Size = new System.Drawing.Size(77, 20);
+            this.txtAlumnoId.TabIndex = 1;
             // 
             // panel3
             // 
@@ -148,40 +182,6 @@ namespace Modulo6._forms
             this.txt_Find.Size = new System.Drawing.Size(238, 20);
             this.txt_Find.TabIndex = 50;
             this.txt_Find.TextChanged += new System.EventHandler(this.txt_Find_TextChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 7);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 13);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Matricula";
-            // 
-            // txtAlumno
-            // 
-            this.txtAlumno.Location = new System.Drawing.Point(89, 23);
-            this.txtAlumno.Name = "txtAlumno";
-            this.txtAlumno.Size = new System.Drawing.Size(312, 20);
-            this.txtAlumno.TabIndex = 3;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(88, 8);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Nombre";
-            // 
-            // txtAlumnoId
-            // 
-            this.txtAlumnoId.Location = new System.Drawing.Point(6, 23);
-            this.txtAlumnoId.Name = "txtAlumnoId";
-            this.txtAlumnoId.Size = new System.Drawing.Size(77, 20);
-            this.txtAlumnoId.TabIndex = 1;
             // 
             // panel1
             // 
@@ -349,8 +349,8 @@ namespace Modulo6._forms
             this.btn_Edit.Image = ((System.Drawing.Image)(resources.GetObject("btn_Edit.Image")));
             this.btn_Edit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_Edit.Name = "btn_Edit";
-            this.btn_Edit.Size = new System.Drawing.Size(65, 28);
-            this.btn_Edit.Text = "&Editar";
+            this.btn_Edit.Size = new System.Drawing.Size(77, 28);
+            this.btn_Edit.Text = "&Guardar";
             this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
             // side2
@@ -446,7 +446,7 @@ namespace Modulo6._forms
             this.columnHeader5.Text = "Nombre";
             this.columnHeader5.Width = 150;
             // 
-            // frmStudent
+            // frmAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -460,7 +460,7 @@ namespace Modulo6._forms
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
-            this.Name = "frmStudent";
+            this.Name = "frmAlumno";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alumno";
             this.Load += new System.EventHandler(this.frmStudent_Load);

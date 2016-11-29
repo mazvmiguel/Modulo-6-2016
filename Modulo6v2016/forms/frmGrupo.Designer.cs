@@ -346,11 +346,11 @@ namespace Modulo6._forms
             // 
             // btn_Edit
             // 
-            this.btn_Edit.Image = ((System.Drawing.Image)(resources.GetObject("btn_Edit.Image")));
+            this.btn_Edit.Image = global::Modulo6.Properties.Resources.save;
             this.btn_Edit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_Edit.Name = "btn_Edit";
-            this.btn_Edit.Size = new System.Drawing.Size(65, 28);
-            this.btn_Edit.Text = "&Editar";
+            this.btn_Edit.Size = new System.Drawing.Size(77, 28);
+            this.btn_Edit.Text = "&Guardar";
             this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
             // side2
