@@ -405,7 +405,18 @@ namespace Modulo6._forms
            dgcDestino.Items.Clear();
 
             switch (EntidadACargar)
-            { 
+            {
+
+                case "Periodos":
+                    dgcDestino.Items.Add("<Omitir>");
+                    dgcDestino.Items.Add("PeriodoId");
+                    dgcDestino.Items.Add("Periodo");
+                    dgcDestino.Items.Add("FechaInicio");
+                    dgcDestino.Items.Add("FechaFin");
+                    dgcDestino.Items.Add("PlanId");
+
+                    break;
+
                 case "Alumnos":
                     dgcDestino.Items.Add("<Omitir>");
                     dgcDestino.Items.Add("Matricula");

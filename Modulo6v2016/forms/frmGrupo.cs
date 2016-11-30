@@ -159,6 +159,11 @@ namespace Modulo6._forms
             this.cls_Con.list_DataView("select GrupoId, Grupo from tGrupo where  Grupo Like '%" + this.txt_Find.Text.Trim() + "%'  ORDER BY Grupo", this.lstv_Student);
         }
 
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            clsmyFunction.CargaMasiva("Grupos");
+        }
+
         private void lstv_Student_SelectedIndexChanged(object sender, EventArgs e)
         {
             /*

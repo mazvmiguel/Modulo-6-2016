@@ -220,6 +220,9 @@ namespace Modulo6._forms
             
         }
 
-      
+        private void MDIParent_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

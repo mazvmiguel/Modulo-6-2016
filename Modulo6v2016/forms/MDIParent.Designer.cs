@@ -414,6 +414,7 @@ namespace Modulo6._forms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de Administración Escolar Modulo 6x";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MDIParent_FormClosed);
             this.Load += new System.EventHandler(this.MDIParent_Load);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();

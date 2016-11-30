@@ -243,8 +243,6 @@ namespace Modulo6._forms
                     chklstGrupo.SelectedValue = dr["GrupoId"].ToString();
                     chklstMateria.SelectedValue = dr["MateriaId"].ToString();
 
-                                       
-                    
                     chklstGrupo.SetItemChecked(chklstGrupo.Items.IndexOf(chklstGrupo.SelectedItem), true);
                     chklstMateria.SetItemChecked(chklstMateria.Items.IndexOf(chklstMateria.SelectedItem), true);
 
@@ -275,6 +273,11 @@ namespace Modulo6._forms
             if (e.NewValue == CheckState.Checked)
                 for (int ix = 0; ix < chklstGrupo.Items.Count; ++ix)
                     if (e.Index != ix) chklstGrupo.SetItemChecked(ix, false);
+        }
+
+        private void btn_Carga_Click(object sender, EventArgs e)
+        {
+            clsmyFunction.CargaMasiva("Cursos");
         }
 
         private void btn_Edit_Click(object sender, EventArgs e)

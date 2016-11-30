@@ -67,6 +67,8 @@ namespace Modulo6._forms
             this.lstv_Student = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -323,6 +325,8 @@ namespace Modulo6._forms
             this.side4,
             this.btn_Cancel,
             this.toolStripSeparator7,
+            this.toolStripButton1,
+            this.toolStripSeparator1,
             this.btn_close});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -446,6 +450,20 @@ namespace Modulo6._forms
             this.columnHeader5.Text = "Grupo";
             this.columnHeader5.Width = 150;
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = global::Modulo6.Properties.Resources.Upload_Document_128;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(106, 28);
+            this.toolStripButton1.Text = "Carga Masiva";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
+            // 
             // frmGrupo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -519,5 +537,7 @@ namespace Modulo6._forms
         private System.Windows.Forms.ListView lstv_Student;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }

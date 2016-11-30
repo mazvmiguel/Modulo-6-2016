@@ -202,6 +202,11 @@ namespace Modulo6._forms
             this.txt_Find.Focus();
         }
 
+        private void btn_Carga_Click(object sender, EventArgs e)
+        {
+            clsmyFunction.CargaMasiva("Maestros");
+        }
+
         private void txt_Find_TextChanged(object sender, EventArgs e)
         {
             if (this.rdo_id.Checked == true)

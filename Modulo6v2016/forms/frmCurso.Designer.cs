@@ -79,6 +79,8 @@ namespace Modulo6._forms
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btn_Carga = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.groupboxform.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -208,6 +210,8 @@ namespace Modulo6._forms
             this.side4,
             this.btn_cancel,
             this.toolStripSeparator2,
+            this.btn_Carga,
+            this.toolStripSeparator1,
             this.btn_close});
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Name = "toolStrip2";
@@ -559,6 +563,20 @@ namespace Modulo6._forms
             this.label3.TabIndex = 3;
             this.label3.Text = "Enter Students";
             // 
+            // btn_Carga
+            // 
+            this.btn_Carga.Image = global::Modulo6.Properties.Resources.Upload_Document_128;
+            this.btn_Carga.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Carga.Name = "btn_Carga";
+            this.btn_Carga.Size = new System.Drawing.Size(106, 28);
+            this.btn_Carga.Text = "Carga Masiva";
+            this.btn_Carga.Click += new System.EventHandler(this.btn_Carga_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
+            // 
             // frmCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -646,5 +664,7 @@ namespace Modulo6._forms
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.CheckedListBox chklstGrupo;
         private System.Windows.Forms.CheckedListBox chklstMateria;
+        private System.Windows.Forms.ToolStripButton btn_Carga;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }

@@ -225,6 +225,11 @@ namespace Modulo6._forms
             }
         }
 
+        private void btn_Carga_Click(object sender, EventArgs e)
+        {
+            clsmyFunction.CargaMasiva("Materias");
+        }
+
         private void btn_Edit_Click(object sender, EventArgs e)
         {
 

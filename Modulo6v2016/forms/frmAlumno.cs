@@ -161,9 +161,7 @@ namespace Modulo6._forms
 
         private void btn_Carga_Click(object sender, EventArgs e)
         {
-            frmImportacion frmImportarAlumno = new frmImportacion();
-            frmImportarAlumno.EntidadACargar = "Alumnos";
-            frmImportarAlumno.ShowDialog();
+            clsmyFunction.CargaMasiva("Alumnos");
         }
 
         private void lstv_Student_SelectedIndexChanged(object sender, EventArgs e)

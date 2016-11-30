@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
+using Modulo6._forms;
 
 namespace Modulo6.DAL
 {
@@ -36,6 +37,13 @@ namespace Modulo6.DAL
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        public void CargaMasiva(string Entidad )
+        {
+            frmImportacion frmImportacion = new frmImportacion();
+            frmImportacion.EntidadACargar = Entidad;
+            frmImportacion.ShowDialog();
         }
         
 

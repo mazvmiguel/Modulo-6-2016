@@ -41,16 +41,16 @@
             this.dgcDestino = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.gpbEncoding = new System.Windows.Forms.GroupBox();
-            this.rdbOEM = new System.Windows.Forms.RadioButton();
-            this.rdbUnicode = new System.Windows.Forms.RadioButton();
-            this.rdbAnsi = new System.Windows.Forms.RadioButton();
             this.btnSeleccionarArchivo = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtOtro = new System.Windows.Forms.TextBox();
             this.rdbOtro = new System.Windows.Forms.RadioButton();
             this.rdbTab = new System.Windows.Forms.RadioButton();
             this.rdbPuntoComa = new System.Windows.Forms.RadioButton();
+            this.gpbEncoding = new System.Windows.Forms.GroupBox();
+            this.rdbOEM = new System.Windows.Forms.RadioButton();
+            this.rdbUnicode = new System.Windows.Forms.RadioButton();
+            this.rdbAnsi = new System.Windows.Forms.RadioButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnImportar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -60,8 +60,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvColumnas)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.gpbEncoding.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.gpbEncoding.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -115,10 +115,12 @@
             this.cmbEntidades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEntidades.FormattingEnabled = true;
             this.cmbEntidades.Items.AddRange(new object[] {
+            "Periodos",
             "Alumnos",
             "Maestros",
             "Materias",
             "Grupos",
+            "Cursos",
             "Claves",
             "Evaluaciones"});
             this.cmbEntidades.Location = new System.Drawing.Point(6, 30);
@@ -215,55 +217,6 @@
             this.tabPage1.Text = "Origen";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // gpbEncoding
-            // 
-            this.gpbEncoding.Controls.Add(this.rdbOEM);
-            this.gpbEncoding.Controls.Add(this.rdbUnicode);
-            this.gpbEncoding.Controls.Add(this.rdbAnsi);
-            this.gpbEncoding.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbEncoding.Location = new System.Drawing.Point(403, 65);
-            this.gpbEncoding.Name = "gpbEncoding";
-            this.gpbEncoding.Size = new System.Drawing.Size(236, 42);
-            this.gpbEncoding.TabIndex = 11;
-            this.gpbEncoding.TabStop = false;
-            this.gpbEncoding.Text = "Codificacion";
-            this.gpbEncoding.Visible = false;
-            // 
-            // rdbOEM
-            // 
-            this.rdbOEM.AutoSize = true;
-            this.rdbOEM.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbOEM.Location = new System.Drawing.Point(138, 19);
-            this.rdbOEM.Name = "rdbOEM";
-            this.rdbOEM.Size = new System.Drawing.Size(50, 17);
-            this.rdbOEM.TabIndex = 2;
-            this.rdbOEM.Text = "OEM";
-            this.rdbOEM.UseVisualStyleBackColor = true;
-            // 
-            // rdbUnicode
-            // 
-            this.rdbUnicode.AutoSize = true;
-            this.rdbUnicode.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbUnicode.Location = new System.Drawing.Point(62, 19);
-            this.rdbUnicode.Name = "rdbUnicode";
-            this.rdbUnicode.Size = new System.Drawing.Size(70, 17);
-            this.rdbUnicode.TabIndex = 1;
-            this.rdbUnicode.Text = "Unicode";
-            this.rdbUnicode.UseVisualStyleBackColor = true;
-            // 
-            // rdbAnsi
-            // 
-            this.rdbAnsi.AutoSize = true;
-            this.rdbAnsi.Checked = true;
-            this.rdbAnsi.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbAnsi.Location = new System.Drawing.Point(6, 19);
-            this.rdbAnsi.Name = "rdbAnsi";
-            this.rdbAnsi.Size = new System.Drawing.Size(54, 17);
-            this.rdbAnsi.TabIndex = 0;
-            this.rdbAnsi.TabStop = true;
-            this.rdbAnsi.Text = "ANSI";
-            this.rdbAnsi.UseVisualStyleBackColor = true;
-            // 
             // btnSeleccionarArchivo
             // 
             this.btnSeleccionarArchivo.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -330,6 +283,55 @@
             this.rdbPuntoComa.TabStop = true;
             this.rdbPuntoComa.Text = "Punto y Coma";
             this.rdbPuntoComa.UseVisualStyleBackColor = true;
+            // 
+            // gpbEncoding
+            // 
+            this.gpbEncoding.Controls.Add(this.rdbOEM);
+            this.gpbEncoding.Controls.Add(this.rdbUnicode);
+            this.gpbEncoding.Controls.Add(this.rdbAnsi);
+            this.gpbEncoding.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbEncoding.Location = new System.Drawing.Point(403, 65);
+            this.gpbEncoding.Name = "gpbEncoding";
+            this.gpbEncoding.Size = new System.Drawing.Size(236, 42);
+            this.gpbEncoding.TabIndex = 11;
+            this.gpbEncoding.TabStop = false;
+            this.gpbEncoding.Text = "Codificacion";
+            this.gpbEncoding.Visible = false;
+            // 
+            // rdbOEM
+            // 
+            this.rdbOEM.AutoSize = true;
+            this.rdbOEM.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbOEM.Location = new System.Drawing.Point(138, 19);
+            this.rdbOEM.Name = "rdbOEM";
+            this.rdbOEM.Size = new System.Drawing.Size(50, 17);
+            this.rdbOEM.TabIndex = 2;
+            this.rdbOEM.Text = "OEM";
+            this.rdbOEM.UseVisualStyleBackColor = true;
+            // 
+            // rdbUnicode
+            // 
+            this.rdbUnicode.AutoSize = true;
+            this.rdbUnicode.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbUnicode.Location = new System.Drawing.Point(62, 19);
+            this.rdbUnicode.Name = "rdbUnicode";
+            this.rdbUnicode.Size = new System.Drawing.Size(70, 17);
+            this.rdbUnicode.TabIndex = 1;
+            this.rdbUnicode.Text = "Unicode";
+            this.rdbUnicode.UseVisualStyleBackColor = true;
+            // 
+            // rdbAnsi
+            // 
+            this.rdbAnsi.AutoSize = true;
+            this.rdbAnsi.Checked = true;
+            this.rdbAnsi.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbAnsi.Location = new System.Drawing.Point(6, 19);
+            this.rdbAnsi.Name = "rdbAnsi";
+            this.rdbAnsi.Size = new System.Drawing.Size(54, 17);
+            this.rdbAnsi.TabIndex = 0;
+            this.rdbAnsi.TabStop = true;
+            this.rdbAnsi.Text = "ANSI";
+            this.rdbAnsi.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
@@ -406,10 +408,10 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.gpbEncoding.ResumeLayout(false);
-            this.gpbEncoding.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.gpbEncoding.ResumeLayout(false);
+            this.gpbEncoding.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.panel3.ResumeLayout(false);

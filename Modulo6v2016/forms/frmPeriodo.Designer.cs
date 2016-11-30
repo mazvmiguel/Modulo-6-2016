@@ -73,6 +73,8 @@ namespace Modulo6._forms
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -96,7 +98,7 @@ namespace Modulo6._forms
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Location = new System.Drawing.Point(5, 84);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(492, 134);
+            this.groupBox1.Size = new System.Drawing.Size(612, 134);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
@@ -223,10 +225,12 @@ namespace Modulo6._forms
             this.side4,
             this.btn_Cancel,
             this.toolStripSeparator7,
+            this.toolStripButton1,
+            this.toolStripSeparator1,
             this.btn_close});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(504, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(617, 31);
             this.toolStrip1.TabIndex = 13;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -317,7 +321,7 @@ namespace Modulo6._forms
             this.panel3.Controls.Add(this.lstv_Class);
             this.panel3.Location = new System.Drawing.Point(7, 274);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(490, 175);
+            this.panel3.Size = new System.Drawing.Size(598, 175);
             this.panel3.TabIndex = 14;
             // 
             // lstv_Class
@@ -335,7 +339,7 @@ namespace Modulo6._forms
             this.lstv_Class.GridLines = true;
             this.lstv_Class.Location = new System.Drawing.Point(17, 13);
             this.lstv_Class.Name = "lstv_Class";
-            this.lstv_Class.Size = new System.Drawing.Size(468, 140);
+            this.lstv_Class.Size = new System.Drawing.Size(549, 140);
             this.lstv_Class.TabIndex = 6;
             this.lstv_Class.UseCompatibleStateImageBehavior = false;
             this.lstv_Class.View = System.Windows.Forms.View.Details;
@@ -381,7 +385,7 @@ namespace Modulo6._forms
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(7, 224);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(490, 44);
+            this.panel1.Size = new System.Drawing.Size(610, 44);
             this.panel1.TabIndex = 9;
             // 
             // label1
@@ -419,7 +423,7 @@ namespace Modulo6._forms
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(0, 40);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(497, 44);
+            this.panel2.Size = new System.Drawing.Size(617, 44);
             this.panel2.TabIndex = 4;
             // 
             // lbl_Mode
@@ -482,12 +486,26 @@ namespace Modulo6._forms
             this.label2.TabIndex = 3;
             this.label2.Text = "Introduzca todas sus Períodos aquí";
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = global::Modulo6.Properties.Resources.Upload_Document_128;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(106, 28);
+            this.toolStripButton1.Text = "&Carga Masiva";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
+            // 
             // frmPeriodo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(504, 448);
+            this.ClientSize = new System.Drawing.Size(617, 448);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panel1);
@@ -557,5 +575,7 @@ namespace Modulo6._forms
         private System.Windows.Forms.ComboBox cmbPlan;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }

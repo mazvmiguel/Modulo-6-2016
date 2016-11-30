@@ -69,6 +69,8 @@ namespace Modulo6._forms
             this.button2 = new System.Windows.Forms.Button();
             this.rdo_Name = new System.Windows.Forms.RadioButton();
             this.rdo_id = new System.Windows.Forms.RadioButton();
+            this.btn_Carga = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -205,6 +207,8 @@ namespace Modulo6._forms
             this.side4,
             this.btn_Cancel,
             this.toolStripSeparator7,
+            this.btn_Carga,
+            this.toolStripSeparator1,
             this.btn_close});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -468,6 +472,20 @@ namespace Modulo6._forms
             this.rdo_id.Text = "Por ID";
             this.rdo_id.UseVisualStyleBackColor = true;
             // 
+            // btn_Carga
+            // 
+            this.btn_Carga.Image = global::Modulo6.Properties.Resources.Upload_Document_128;
+            this.btn_Carga.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Carga.Name = "btn_Carga";
+            this.btn_Carga.Size = new System.Drawing.Size(106, 28);
+            this.btn_Carga.Text = "&Carga Masiva";
+            this.btn_Carga.Click += new System.EventHandler(this.btn_Carga_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
+            // 
             // frmMaestro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -545,5 +563,7 @@ namespace Modulo6._forms
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txt_Find;
+        private System.Windows.Forms.ToolStripButton btn_Carga;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }

@@ -172,6 +172,11 @@ namespace Modulo6._forms
 
         }
 
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            clsmyFunction.CargaMasiva("Periodos");
+        }
+
         private void limpiar_forma()
         {
 
