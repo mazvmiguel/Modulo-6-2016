@@ -397,6 +397,7 @@ namespace Modulo6._forms
             EntidadACargar = (string)cmbEntidades.SelectedItem;
             lblEntidad.Text = EntidadACargar;
             ColumnasDestino_llenar();
+            Parametros_Cargar();
         }
 
         private void ColumnasDestino_llenar()
@@ -762,8 +763,23 @@ namespace Modulo6._forms
                 lblEntidad.Text = EntidadACargar;
             }
 
-        }
+            switch (Program.PerfilId)
+            {    //nivel 0 admin
+                case 0:
+                    btnParametrosGuardar.Visible = true;
+                    
+                    break;
+                //nivel 1 usuario
+                case 1:
+                    btnParametrosGuardar.Visible = false;
+                    break;
+                //nivel 2 super
+                case 2:
+                    btnParametrosGuardar.Visible = false;
+                    break;
 
+            }
+        }
         private void rdbTexto_CheckedChanged(object sender, EventArgs e)
         {
             fileCSV = "";
@@ -773,5 +789,34 @@ namespace Modulo6._forms
         {
             fileCSV = "";
         }
+
+        private void btnParametrosGuardar_Click(object sender, EventArgs e)
+        {
+            //Guardar los parametros de Carga
+            //Para cada Entidad
+            //Se Guarda el Tipo de Archivo XLS, o TXT
+            //Se Guardan las relaciones de las columnas fuente y destino
+            //Si tiene encabezado o o no
+            //El tipo de Separador
+
+        }
+
+        private void Parametros_Guardar()
+        {
+
+        }
+        private void Parametros_Cargar()
+        {
+            //validando que haya una entidad que cargar
+            if(EntidadACargar.Length>0)
+            {
+                //buscar los valores de tipo de archivo 
+
+
+            }
+
+
+        }
+        
     }
 }

@@ -8,6 +8,8 @@ namespace Modulo6
     {
 
         public static String Usuario = ""; // Modifiable in Code
+        public static String UsuarioNombre = "";
+        public static Int16 PerfilId=-1;
         public static String  PeriodoTrabajoId= ""; // Modifiable in Code
         /// <summary>
         /// The main entry point for the application.
