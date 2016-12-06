@@ -65,6 +65,7 @@
     <Compile Include="BUL\clsClave.cs" />
     <Compile Include="BUL\clsCurso.cs" />
     <Compile Include="BUL\clsEvaluacion.cs" />
+    <Compile Include="DAL\clsFuncionesComunes.cs" />
     <Compile Include="BUL\clsGrupo.cs" />
     <Compile Include="BUL\clsMaestro.cs" />
     <Compile Include="BUL\clsMateria.cs" />
