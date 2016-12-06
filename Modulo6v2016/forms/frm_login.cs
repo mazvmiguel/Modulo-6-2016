@@ -104,6 +104,12 @@ private void btn_Login_Click(object sender, EventArgs e)
                OleDbDataReader  drpassword = cmdlogin.ExecuteReader();
                 if (drpassword.Read())
                 {
+
+                    Program.Usuario = com_uName.SelectedValue.ToString();
+                    Program.PeriodoTrabajoId = cmbPeriodo.SelectedValue.ToString();
+                    Program.UsuarioNombre = drpassword["u_name"].ToString();
+                    Program.PerfilId= Int16.Parse( drpassword["perfilid"].ToString());
+
                     cls_ODBC.cn.Close();
                     drpassword.Close();
                     cmdlogin.Dispose();
@@ -111,8 +117,7 @@ private void btn_Login_Click(object sender, EventArgs e)
 
                     mdi_Parent.Show();
 
-                    Program.Usuario = com_uName.SelectedValue.ToString();
-                    Program.PeriodoTrabajoId = cmbPeriodo.SelectedValue.ToString();
+                    
 
                 }
                 else
