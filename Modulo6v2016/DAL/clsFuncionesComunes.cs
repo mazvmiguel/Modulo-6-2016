@@ -22,8 +22,7 @@ namespace Modulo6
         public static bool CargarDropDownList(ref ComboBox oDDL, string sQuery, string sValue, string sDisplay)
         {
             bool bResultado;
-            cConexion oConn = new cConexion(@"workstation id=SICH; Data Source=SICH; TRUSTED_CONNECTION=YES; persist security info=False; Initial Catalog=MODULO_6X; packet size=4096; ");
-            //"workstation id=SICH; data source=SICH; TRUSTED_CONNECTION=YES; persist security info=False; initial catalog=Axtel_Captura; packet size=4096; "
+            cConexion oConn = new cConexion(Get_ConfigValue("ConnectionString"));            
             SqlCommand oCmd = new SqlCommand(sQuery);
             oCmd.CommandType = CommandType.Text;
 

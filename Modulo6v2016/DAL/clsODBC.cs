@@ -19,12 +19,13 @@ namespace Modulo6.DAL
         //public static  OdbcDataReader drStock;
         /*================================================================
          * **************************************************************/
+        
+        //public OleDbConnection cn = new OleDbConnection(@"Provider=SQLNCLI11;Data Source=(LocalDB)\MODULO62016;Database=MODULO62016;Integrated Security=SSPI");
+        //public SqlConnection cnsql = new SqlConnection(@"Server=(LocalDB)\MODULO62016;Database=MODULO62016;Trusted_Connection=True;");
 
-        // public OdbcConnection cn = new OdbcConnection("Dsn=school");
+        public OleDbConnection cn = new OleDbConnection(@"Provider=SQLNCLI11;Data Source=SICH;Database=MODULO_6X;Integrated Security=SSPI");
+        public SqlConnection cnsql = new SqlConnection(@"Server=SICH;Database=MODULO_6X;Trusted_Connection=True;");
 
-        //public OleDbConnection cn = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\Mazv.Net\SXR\Modulo 6 2016\Modulo6v2016.mdb");
-        public OleDbConnection cn = new OleDbConnection(@"Provider=SQLNCLI11;Data Source=(LocalDB)\MODULO62016;Database=MODULO62016;Integrated Security=SSPI");
-        public SqlConnection cnsql = new SqlConnection(@"Server=(LocalDB)\MODULO62016;Database=MODULO62016;Trusted_Connection=True;");
         public void connCheck()
         {
 

@@ -182,6 +182,11 @@ namespace Modulo6._forms
                     Curso.Show();
                     break;
 
+                case "Claves":
+                    frmClave fClave = new frmClave();
+                    fClave.Show();
+                    break;
+
                 case "Cargas Masivas":
                     frmImportacion frm_imp = new frmImportacion();
                     frm_imp.Show();

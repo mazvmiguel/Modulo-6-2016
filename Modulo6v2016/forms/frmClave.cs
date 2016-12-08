@@ -8,73 +8,53 @@ using System.Windows.Forms;
 using System.Data.OleDb;
 using Modulo6.BUL;
 using Modulo6.DAL;
+//////////////////////////////
+using System.Data.SqlClient;
 
 namespace Modulo6._forms
 {
     public partial class frmClave : Form
     {
-        public frmClave()
-        {
-            InitializeComponent();
-        }
+        //public string str, strEdit;
+        bool bNuevo = false;
+        clsExamen oClave;
 
-        public string str, strEdit;
         DAL.clsODBC cls_Con = new Modulo6.DAL.clsODBC();
         OleDbCommand cmdForm = new OleDbCommand();
         DAL.cls_myFunctions clsmyFunction = new Modulo6.DAL.cls_myFunctions();
 
+        public frmClave()
+        {
+            InitializeComponent();
+        }
+        
         private void frmMateria_Load(object sender, EventArgs e)
         {
-            if (str == "Agregando")
-            {
-                this.lbl_Mode.Text = str;
-                btn_Edit.Visible = false;
-                btn_Delete.Visible = false;
-                side2.Visible = false;
-                side3.Visible = false;
-            }
-            else
-            {
-                if (str == "Modificando")
-                {
-                    this.lbl_Mode.Text = str;
-                    btn_Add.Visible = false;
-                    side1.Visible = false;
-                }
+            if (!bNuevo) {
+                this.lbl_Mode.Text = "Modificando";                
             }
 
-            frmAlumno frm_Student = new frmAlumno();
-
-            // =========================================
             panel5.Visible = false;
-            
-            set_TabIndex();
-            combo_Plan();
-            list_Data();
-            limpiar_forma();
+
+            cls_Con.list_DataView("proctClaveList", this.lstv_Examen);
+            clsFuncionesComunes.CargarDropDownList(ref cboMateria, "SELECT MateriaId, Materia FROM tMateria ORDER BY 2", "MateriaId", "Materia");            
         }
 
-        private void combo_Plan()
-        {
-            cls_Con.comboFill(this.cmbMaestro, "select MaestroId,Maestro from tMaestro order by 2", "tMaestro", "Maestro", "MaestroId");
-            //cls_Con.listboxfill(this.lstb_Materia, "select MateriaId,Materia from tMateria order by 2", "tMateria", "Materia", "MateriaId");
-            //cls_Con.listboxfill(this.lstb_Grupo, "select GrupoId,Grupo from tGrupo order by 2", "tGrupo", "Grupo", "GrupoId");
-
-            //cls_Con.chklistfill(this.chklstGrupo, "select GrupoId,Grupo from tGrupo order by 2", "tGrupo", "Grupo", "GrupoId");
-            //cls_Con.chklistfill(this.chklstMateria, "select M.MateriaId,Materia=UPPER(M.Materia +'('+ p.[Plan] +')') from tMateria M INNER JOIN TPLAN P ON P.PLANID=M.PLANID order by 2 ", "tMateria", "Materia", "MateriaId");
-        }
+        //private void combo_Plan()
+        //{
+        //    cls_Con.comboFill(this.cboMateria, "select MaestroId,Maestro from tMaestro order by 2", "tMaestro", "Maestro", "MaestroId");            
+        //}
 
         private void list_Data()
         {
-            cls_Con.list_DataView("proctCursoList", this.lstv_Subject);
-
+            cls_Con.list_DataView("proctCursoList", this.lstv_Examen);
         }
-       
-       
+
+#region POR_REVISAR
         private void set_TabIndex()
         {
            
-            cmbMaestro.TabIndex = 2;
+            cboMateria.TabIndex = 2;
             groupboxform.TabIndex = 7;
         }
 
@@ -90,7 +70,6 @@ namespace Modulo6._forms
 
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
-
             limpiar_forma();
             list_Data();
         }
@@ -109,18 +88,17 @@ namespace Modulo6._forms
             clsCurso Curso = new clsCurso();
             
 
-            if (strEdit != null)
-                {
-                Curso.CursoId = Int32.Parse(strEdit);
-            }
-            else {
-                Curso.CursoId = 0;
-            }
+            //if (strEdit != null)
+            //    {
+            //    Curso.CursoId = Int32.Parse(strEdit);
+            //}
+            //else {
+            //    Curso.CursoId = 0;
+            //}
 
             
-            Curso.MaestroId =   cmbMaestro.SelectedValue.ToString();           
-            //Curso.MateriaId = chklstMateria.SelectedValue.ToString();
-            //Curso.GrupoId = chklstGrupo.SelectedValue.ToString();
+            Curso.MaestroId =   cboMateria.SelectedValue.ToString();           
+
 
             Curso.Guardar();
           
@@ -138,8 +116,8 @@ namespace Modulo6._forms
             //chklstMateria.ClearSelected();
             //chklstGrupo.ClearSelected();
 
-            cmbMaestro.SelectedIndex = -1;
-            cmbMaestro.Focus();
+            //cboMateria.SelectedIndex = -1;
+            //cboMateria.Focus();
         }               
 
         private void rdo_Class_Click(object sender, EventArgs e)
@@ -169,53 +147,20 @@ namespace Modulo6._forms
         private void txt_Find_TextChanged(object sender, EventArgs e)
         {
             
-            cls_Con.list_DataView("proctMateriaSearch '" + this.txt_Find.Text.Trim() + "'", this.lstv_Subject);            
+            cls_Con.list_DataView("proctMateriaSearch '" + this.txt_Find.Text.Trim() + "'", this.lstv_Examen);            
         }
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
             clsCurso Curso = new clsCurso();
 
-            Curso.CursoId = Int32.Parse(strEdit);
+            //Curso.CursoId = Int32.Parse(strEdit);
 
             Curso.Borrar();
             limpiar_forma();
             list_Data();
         }
-    
-        private void lstv_Subject_SelectedIndexChanged(object sender, EventArgs e)
-        {           
-            if (str == "Modificando")
-            {                
-                cls_Con.connCheck();
-                OleDbCommand cmd = new OleDbCommand("proctCursoSelect " + (this.lstv_Subject .Items[lstv_Subject.FocusedItem.Index].SubItems[0].Text.Trim()) + "", cls_Con.cn);
-
-                OleDbDataReader dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
-                    limpiar_forma();
-                    strEdit = dr["CursoId"].ToString();
-                    //lstb_Grupo.SelectedValue = dr["GrupoId"].ToString();
-                    //lstb_Materia.SelectedValue= dr["MateriaId"].ToString();
-
-                    //chklstGrupo.SelectedValue = dr["GrupoId"].ToString();
-                    //chklstMateria.SelectedValue = dr["MateriaId"].ToString();
-                                                           
-                    //chklstGrupo.SetItemChecked(chklstGrupo.Items.IndexOf(chklstGrupo.SelectedItem), true);
-                    //chklstMateria.SetItemChecked(chklstMateria.Items.IndexOf(chklstMateria.SelectedItem), true);
-
-                    cmbMaestro.SelectedValue = dr["MaestroId"].ToString();
-                }
-                cls_Con.cn.Close();
-                dr.Close();
-                cmd.Dispose();
-            }
-            else
-            {
-                return;
-            }
-        }
-
+        
         //private void chklstMateria_ItemCheck(object sender, ItemCheckEventArgs e)
         //{
         //    if (e.NewValue == CheckState.Checked)
@@ -236,7 +181,7 @@ namespace Modulo6._forms
             clsMateria Materia = new clsMateria();
            
 
-            if (string.IsNullOrEmpty(cmbMaestro.Text))
+            if (string.IsNullOrEmpty(cboMateria.Text))
             {
 
                 Materia.PlanId = 0;
@@ -244,20 +189,162 @@ namespace Modulo6._forms
             }
             else
             {
-                Materia.PlanId = Int16.Parse(cmbMaestro.SelectedValue.ToString());
+                Materia.PlanId = Int16.Parse(cboMateria.SelectedValue.ToString());
             }
             Materia.Guardar();
             limpiar_forma();
             list_Data();
         }
 
+#endregion
+        
+        private void btnAsignarReactivos_Click(object sender, EventArgs e)
+        {
+            
+            int iNumOpciones = txtNumOpciones.Text != string.Empty ? Convert.ToInt16(txtNumOpciones.Text) : 0;
+            int iNumReactivos = txtNumPreguntas.Text!=string.Empty?Convert.ToInt16(txtNumPreguntas.Text):0;
+
+            //SICH21NOV2016: validacion de entradas de acuerdo a dimensiones maximas definidas de reactivos y opciones
+            if (iNumReactivos < 1 || iNumReactivos > Convert.ToInt16(clsFuncionesComunes.Get_ConfigValue("MAX_NUM_REACTIVOS")))
+            {
+                MessageBox.Show("La cantidad de reactivos no es válida. Favor de verificar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            if (iNumOpciones < 1 || iNumOpciones > Convert.ToInt16(clsFuncionesComunes.Get_ConfigValue("MAX_NUM_OPCIONES")))
+            {
+                MessageBox.Show("La cantidad de opciones no es válida. Favor de verificar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            ConfigurarGrid(iNumReactivos, iNumOpciones, false, string.Empty);          
+        }
+
+        private void lstv_Examen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            oClave = new clsExamen(lstv_Examen.Items[lstv_Examen.FocusedItem.Index].SubItems[0].Text.Trim());
+            char[] s_Solucion = oClave.SolRConcentrado.ToCharArray();
+            string[] s_Ponderacion = oClave.Ponderacion.Split('|');
+
+            txtClaveId.Text = oClave.ClaveId;
+            cboMateria.SelectedValue = oClave.MateriaId;
+            txtNumPreguntas.Text = oClave.PreguntasCantidad.ToString();
+            txtNumOpciones.Text = oClave.DistractoresCantidad.ToString();
+
+            //SICH 04DIC2016: esto se tiene que ejecutar en ese orden
+            ConfigurarGrid(oClave.PreguntasCantidad, oClave.DistractoresCantidad, true, oClave.Ponderacion);
+            for (int i = 0; i <= dgvRespuestas.Rows.Count - 1; i++) { 
+                dgvRespuestas.Rows[i].Cells[clsFuncionesComunes.fnRevMapRespuesta(s_Solucion[i])].Value = "X";
+            }
+                        
+        }
+                
+        private void cmbMateria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string sMateriaId = string.Empty;
+
+            DataRowView rowView = cboMateria.SelectedItem as DataRowView;
+            if (rowView != null)
+            {
+                sMateriaId = rowView[0].ToString();
+            }
+
+            cls_Con.connCheck();
+            OleDbCommand cmd = new OleDbCommand("SELECT b.MateriaId, a.\"Plan\" PlanEscolar FROM tPlan a INNER JOIN tMateria b ON a.PlanId=b.PlanId WHERE b.MateriaId='" + sMateriaId + "'", cls_Con.cn);
+
+            OleDbDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                //limpiar_forma();
+                txtMateriaDesc.Text = dr[0].ToString();
+            }
+            cls_Con.cn.Close();
+            dr.Close();
+            cmd.Dispose();
+        }
+
+        private void ConfigurarGrid(int iReactivosCantidad, int iNumDistractores, bool bPonderacionDef, string sPonderacion)
+        {
+            GenerarColumnas(iNumDistractores);
+            GenerarRenglones(iReactivosCantidad, bPonderacionDef, sPonderacion);
+        }
+
+
+        private void GenerarColumnas(int iNumDistractores)
+        {
+            int iNewCol = 1;
+
+            //SICH21NOV2016: eliminacion de columnas adicionales
+            for (int i = (dgvRespuestas.Columns.Count - 1); i >= 1; i--)
+            {
+                dgvRespuestas.Columns.RemoveAt(i);
+            }
+            //SICH21NOV2016: se crean las columnas para contener las respuestas correctas del examen
+            for (int i = 1; i <= iNumDistractores; i++)
+            {
+                dgvRespuestas.Columns.Add("colOpt" + i.ToString(), clsFuncionesComunes.fnMapRespuesta(i));
+                dgvRespuestas.Columns[iNewCol].ReadOnly = true;
+                ((DataGridViewTextBoxColumn)dgvRespuestas.Columns[iNewCol]).MaxInputLength = 1;
+                dgvRespuestas.Columns[iNewCol].Width = dgvRespuestas.Columns[0].Width;
+                dgvRespuestas.Columns[iNewCol].SortMode = DataGridViewColumnSortMode.NotSortable;
+                ((DataGridViewTextBoxColumn)dgvRespuestas.Columns[iNewCol]).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                iNewCol++;
+            }
+        }
+
+        private void GenerarRenglones(int iReactivosCantidad, bool bPonderacionDef, string sPonderacion)
+        {
+            //SICH21NOV2016: eliminacion de renglones adicionales
+            for (int i = (dgvRespuestas.Rows.Count - 1); i >= 0; i--)
+            {
+                dgvRespuestas.Rows.RemoveAt(i);
+                dgvPonderacion.Rows.RemoveAt(i);
+            }
+            //SICH21NOV2016: se crean los renglones para contener los reactivos y ponderaciones del examen
+            for (int i = 0; i < iReactivosCantidad; i++)
+            {
+                dgvRespuestas.Rows.Add();
+                dgvRespuestas.Rows[i].Cells[0].Value = (i + 1).ToString();
+
+                dgvPonderacion.Rows.Add();
+                dgvPonderacion.Rows[i].Cells[0].Value = (i + 1).ToString();
+
+                if (bPonderacionDef)
+                {
+                    string[] s_Ponderacion = sPonderacion.Split('|');
+                    dgvPonderacion.Rows[i].Cells[1].Value = String.Format("{0:##0.0##}", (Convert.ToDouble(s_Ponderacion[i])));
+                }
+                else { dgvPonderacion.Rows[i].Cells[1].Value = String.Format("{0:##0.0##}", (Convert.ToDouble(clsFuncionesComunes.Get_ConfigValue("BASE_EVAL")) / (double)iReactivosCantidad)); }                
+            }
+        }
+           
+        private void dgvRespuestas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.RowIndex >= 0 && e.ColumnIndex > 0)
+            {
+                if ((dgvRespuestas.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null) && (dgvRespuestas.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() != string.Empty))
+                {
+                    dgvRespuestas.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = string.Empty;
+                    return;
+                }
+
+                for (int i = 1; i < dgvRespuestas.Columns.Count; i++)
+                {
+                    dgvRespuestas.Rows[e.RowIndex].Cells[i].Value = string.Empty;
+                }
+
+                dgvRespuestas.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "X";
+            }
+        }
+
         private void txtNumPreguntas_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Tab))
-            {                
+            {
                 e.Handled = true;
                 return;
-            }           
+            }
         }
 
         private void txtNumOpciones_KeyPress(object sender, KeyPressEventArgs e)
@@ -266,91 +353,17 @@ namespace Modulo6._forms
             {
                 e.Handled = true;
                 return;
-            }   
+            }
         }
-
-        private void btnAsignarReactivos_Click(object sender, EventArgs e)
+               
+        private void dgvPonderacion_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
-            int iNewCol = 1;
-            int iNumOpciones = txtNumOpciones.Text != string.Empty ? Convert.ToInt16(txtNumOpciones.Text) : 0;
-            int iNumReactivos = txtNumPreguntas.Text!=string.Empty?Convert.ToInt16(txtNumPreguntas.Text):0;
-
-            //SICH21NOV2016: validacion de entradas de acuerdo a dimensiones maximas definidas de reactivos y opciones
-            if (iNumReactivos < 1 || iNumReactivos > 120)
-            {
-                MessageBox.Show("La cantidad de reactivos no es válida. Favor de verificar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            if (iNumOpciones < 1 || iNumOpciones > 10) {
-                MessageBox.Show("La cantidad de opciones no es válida. Favor de verificar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            //SICH21NOV2016: eliminacion de columnas adicionales
-            for (int i = (dgvRespuestas.Columns.Count - 1); i >= 1; i--) {
-                dgvRespuestas.Columns.RemoveAt(i);
-            }
-            //SICH21NOV2016: se crean las columnas para contener las respuestas correctas del examen
-            for (int i = 1; i <= iNumOpciones; i++)
-            {
-                dgvRespuestas.Columns.Add("colOpt"+i.ToString(),"O"+i.ToString());                
-                dgvRespuestas.Columns[iNewCol].ReadOnly = true;
-                ((DataGridViewTextBoxColumn)dgvRespuestas.Columns[iNewCol]).MaxInputLength = 1;
-                dgvRespuestas.Columns[iNewCol].Width = dgvRespuestas.Columns[0].Width;
-                dgvRespuestas.Columns[iNewCol].SortMode = DataGridViewColumnSortMode.NotSortable;
-                ((DataGridViewTextBoxColumn)dgvRespuestas.Columns[iNewCol]).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                
-                iNewCol++;
-            }
-
-            //SICH21NOV2016: eliminacion de renglones adicionales
-            for (int i = (dgvRespuestas.Rows.Count - 1); i >= 0; i--)
-            {
-                dgvRespuestas.Rows.RemoveAt(i);
-            }
-            //SICH21NOV2016: se crean las renglones para contener los reactivos del examen
-            for (int i = 0; i < iNumReactivos; i++)
-            {
-                dgvRespuestas.Rows.Add();
-                dgvRespuestas.Rows[i].Cells[0].Value = (i + 1).ToString();
-            }                                    
+            TextBox miText = e.Control as TextBox;
+            miText.KeyPress += new KeyPressEventHandler(clsFuncionesComunes.Cell_KeyPress);
         }
        
-        private void dgvRespuestas_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
-        {
-        //    TextBox miText = e.Control as TextBox;
-        //    miText.KeyPress += new KeyPressEventHandler(cell_KeyPress);            
-        }
-
-        private void dgvRespuestas_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        //private void cell_KeyPress(object sender, KeyPressEventArgs e)
-        //{
-        //    if (e.KeyChar.ToString() == "\b")
-        //    {
-        //        e.Handled = false;
-        //        return;
-        //    }
-        //    else
-        //    {
-        //        e.KeyChar = char.Parse("X");
-        //    }            
-        //}
-
-        private void dgvRespuestas_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0 && e.ColumnIndex > 0)
-            {
-                for (int i = 1; i < dgvRespuestas.Columns.Count; i++)
-                {
-                    dgvRespuestas.Rows[e.RowIndex].Cells[i].Value = string.Empty;
-                }
-
-                dgvRespuestas.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "X";
-            }            
-        }       
     }
 }
+
+
+

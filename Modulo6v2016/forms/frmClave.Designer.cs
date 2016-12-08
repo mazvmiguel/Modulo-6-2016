@@ -31,16 +31,19 @@ namespace Modulo6._forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClave));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupboxform = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboPlan = new System.Windows.Forms.ComboBox();
             this.lblPlan = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblClave = new System.Windows.Forms.Label();
-            this.cmbMaestro = new System.Windows.Forms.ComboBox();
+            this.txtMateriaDesc = new System.Windows.Forms.TextBox();
             this.lblMateriaId = new System.Windows.Forms.Label();
+            this.txtClaveId = new System.Windows.Forms.TextBox();
+            this.lblClave = new System.Windows.Forms.Label();
+            this.cboMateria = new System.Windows.Forms.ComboBox();
+            this.lblMateria = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.btn_Add = new System.Windows.Forms.ToolStripButton();
@@ -55,20 +58,12 @@ namespace Modulo6._forms
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btn_close = new System.Windows.Forms.ToolStripButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txt_Find = new System.Windows.Forms.TextBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.lstv_Subject = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lstv_Examen = new System.Windows.Forms.ListView();
+            this.colClave = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colMateriaId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colMateria = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colPlan = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colFecha = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbl_Mode = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -90,13 +85,18 @@ namespace Modulo6._forms
             this.lblOpciones = new System.Windows.Forms.Label();
             this.lblPreguntas = new System.Windows.Forms.Label();
             this.dgvPonderacion = new System.Windows.Forms.DataGridView();
-            this.colNoPreguntaPond = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvRespuestas = new System.Windows.Forms.DataGridView();
             this.colNoPregunta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txt_Find = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.colNoPreguntaPond = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPonderacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupboxform.SuspendLayout();
             this.toolStrip2.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -104,19 +104,21 @@ namespace Modulo6._forms
             this.grpReactivos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPonderacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRespuestas)).BeginInit();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupboxform
             // 
             this.groupboxform.BackColor = System.Drawing.Color.Transparent;
-            this.groupboxform.Controls.Add(this.comboBox1);
+            this.groupboxform.Controls.Add(this.cboPlan);
             this.groupboxform.Controls.Add(this.lblPlan);
-            this.groupboxform.Controls.Add(this.textBox2);
-            this.groupboxform.Controls.Add(this.label5);
-            this.groupboxform.Controls.Add(this.textBox1);
-            this.groupboxform.Controls.Add(this.lblClave);
-            this.groupboxform.Controls.Add(this.cmbMaestro);
+            this.groupboxform.Controls.Add(this.txtMateriaDesc);
             this.groupboxform.Controls.Add(this.lblMateriaId);
+            this.groupboxform.Controls.Add(this.txtClaveId);
+            this.groupboxform.Controls.Add(this.lblClave);
+            this.groupboxform.Controls.Add(this.cboMateria);
+            this.groupboxform.Controls.Add(this.lblMateria);
             this.groupboxform.Controls.Add(this.button2);
             this.groupboxform.Location = new System.Drawing.Point(8, 96);
             this.groupboxform.Name = "groupboxform";
@@ -124,14 +126,14 @@ namespace Modulo6._forms
             this.groupboxform.TabIndex = 25;
             this.groupboxform.TabStop = false;
             // 
-            // comboBox1
+            // cboPlan
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(637, 34);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(135, 21);
-            this.comboBox1.TabIndex = 54;
-            this.toolTip1.SetToolTip(this.comboBox1, "Selecciona un Maestro");
+            this.cboPlan.FormattingEnabled = true;
+            this.cboPlan.Location = new System.Drawing.Point(637, 34);
+            this.cboPlan.Name = "cboPlan";
+            this.cboPlan.Size = new System.Drawing.Size(135, 21);
+            this.cboPlan.TabIndex = 54;
+            this.toolTip1.SetToolTip(this.cboPlan, "Selecciona un Maestro");
             // 
             // lblPlan
             // 
@@ -143,29 +145,30 @@ namespace Modulo6._forms
             this.lblPlan.TabIndex = 53;
             this.lblPlan.Text = "Plan";
             // 
-            // textBox2
+            // txtMateriaDesc
             // 
-            this.textBox2.Location = new System.Drawing.Point(339, 34);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(280, 20);
-            this.textBox2.TabIndex = 52;
+            this.txtMateriaDesc.Location = new System.Drawing.Point(483, 34);
+            this.txtMateriaDesc.Name = "txtMateriaDesc";
+            this.txtMateriaDesc.ReadOnly = true;
+            this.txtMateriaDesc.Size = new System.Drawing.Size(135, 20);
+            this.txtMateriaDesc.TabIndex = 52;
             // 
-            // label5
+            // lblMateriaId
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(336, 18);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 13);
-            this.label5.TabIndex = 51;
-            this.label5.Text = "Clave de Materia";
+            this.lblMateriaId.AutoSize = true;
+            this.lblMateriaId.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMateriaId.Location = new System.Drawing.Point(480, 18);
+            this.lblMateriaId.Name = "lblMateriaId";
+            this.lblMateriaId.Size = new System.Drawing.Size(104, 13);
+            this.lblMateriaId.TabIndex = 51;
+            this.lblMateriaId.Text = "Clave de Materia";
             // 
-            // textBox1
+            // txtClaveId
             // 
-            this.textBox1.Location = new System.Drawing.Point(22, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(135, 20);
-            this.textBox1.TabIndex = 50;
+            this.txtClaveId.Location = new System.Drawing.Point(22, 34);
+            this.txtClaveId.Name = "txtClaveId";
+            this.txtClaveId.Size = new System.Drawing.Size(135, 20);
+            this.txtClaveId.TabIndex = 50;
             // 
             // lblClave
             // 
@@ -177,24 +180,26 @@ namespace Modulo6._forms
             this.lblClave.TabIndex = 49;
             this.lblClave.Text = "Clave de Exámen";
             // 
-            // cmbMaestro
+            // cboMateria
             // 
-            this.cmbMaestro.FormattingEnabled = true;
-            this.cmbMaestro.Location = new System.Drawing.Point(181, 33);
-            this.cmbMaestro.Name = "cmbMaestro";
-            this.cmbMaestro.Size = new System.Drawing.Size(135, 21);
-            this.cmbMaestro.TabIndex = 16;
-            this.toolTip1.SetToolTip(this.cmbMaestro, "Selecciona un Maestro");
+            this.cboMateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMateria.FormattingEnabled = true;
+            this.cboMateria.Location = new System.Drawing.Point(181, 33);
+            this.cboMateria.Name = "cboMateria";
+            this.cboMateria.Size = new System.Drawing.Size(280, 21);
+            this.cboMateria.TabIndex = 16;
+            this.toolTip1.SetToolTip(this.cboMateria, "Selecciona un Maestro");
+            this.cboMateria.SelectedIndexChanged += new System.EventHandler(this.cmbMateria_SelectedIndexChanged);
             // 
-            // lblMateriaId
+            // lblMateria
             // 
-            this.lblMateriaId.AutoSize = true;
-            this.lblMateriaId.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMateriaId.Location = new System.Drawing.Point(178, 17);
-            this.lblMateriaId.Name = "lblMateriaId";
-            this.lblMateriaId.Size = new System.Drawing.Size(104, 13);
-            this.lblMateriaId.TabIndex = 15;
-            this.lblMateriaId.Text = "Clave de Materia";
+            this.lblMateria.AutoSize = true;
+            this.lblMateria.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMateria.Location = new System.Drawing.Point(178, 17);
+            this.lblMateria.Name = "lblMateria";
+            this.lblMateria.Size = new System.Drawing.Size(49, 13);
+            this.lblMateria.TabIndex = 15;
+            this.lblMateria.Text = "Materia";
             // 
             // button2
             // 
@@ -249,7 +254,7 @@ namespace Modulo6._forms
             this.btn_Edit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(65, 28);
-            this.btn_Edit.Text = "&Guardar";
+            this.btn_Edit.Text = "&Editar";
             this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
             // side2
@@ -308,126 +313,49 @@ namespace Modulo6._forms
             this.btn_close.Text = "&Cerrar";
             this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
-            // panel5
+            // lstv_Examen
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel5.BackgroundImage = global::Modulo6.Properties.Resources.small_form;
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel5.Controls.Add(this.linkLabel1);
-            this.panel5.Controls.Add(this.label20);
-            this.panel5.Controls.Add(this.label18);
-            this.panel5.Controls.Add(this.txt_Find);
-            this.panel5.Location = new System.Drawing.Point(79, 53);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(265, 116);
-            this.panel5.TabIndex = 29;
+            this.lstv_Examen.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.colClave,
+            this.colMateriaId,
+            this.colMateria,
+            this.colPlan,
+            this.colFecha});
+            this.lstv_Examen.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstv_Examen.FullRowSelect = true;
+            this.lstv_Examen.GridLines = true;
+            this.lstv_Examen.Location = new System.Drawing.Point(22, 15);
+            this.lstv_Examen.Name = "lstv_Examen";
+            this.lstv_Examen.Size = new System.Drawing.Size(646, 416);
+            this.lstv_Examen.TabIndex = 1;
+            this.lstv_Examen.UseCompatibleStateImageBehavior = false;
+            this.lstv_Examen.View = System.Windows.Forms.View.Details;
+            this.lstv_Examen.SelectedIndexChanged += new System.EventHandler(this.lstv_Examen_SelectedIndexChanged);
             // 
-            // linkLabel1
+            // colClave
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.BackColor = System.Drawing.Color.Black;
-            this.linkLabel1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.ForeColor = System.Drawing.Color.Red;
-            this.linkLabel1.LinkColor = System.Drawing.Color.Yellow;
-            this.linkLabel1.Location = new System.Drawing.Point(110, 92);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(49, 13);
-            this.linkLabel1.TabIndex = 54;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Cerrar";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.colClave.Text = "Exámen";
+            this.colClave.Width = 70;
             // 
-            // label20
+            // colMateriaId
             // 
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.Black;
-            this.label20.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label20.Location = new System.Drawing.Point(35, 18);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(205, 13);
-            this.label20.TabIndex = 53;
-            this.label20.Text = "Buscar por Nombre de Materia";
+            this.colMateriaId.Text = "Materia Id";
+            this.colMateriaId.Width = 70;
             // 
-            // label18
+            // colMateria
             // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Black;
-            this.label18.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label18.Location = new System.Drawing.Point(12, 49);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(135, 13);
-            this.label18.TabIndex = 51;
-            this.label18.Text = "Escribe Nombre de Materia";
+            this.colMateria.Text = "Materia";
+            this.colMateria.Width = 240;
             // 
-            // txt_Find
+            // colPlan
             // 
-            this.txt_Find.BackColor = System.Drawing.Color.Khaki;
-            this.txt_Find.Location = new System.Drawing.Point(15, 64);
-            this.txt_Find.Name = "txt_Find";
-            this.txt_Find.Size = new System.Drawing.Size(238, 20);
-            this.txt_Find.TabIndex = 50;
-            this.txt_Find.TextChanged += new System.EventHandler(this.txt_Find_TextChanged);
+            this.colPlan.Text = "Plan";
+            this.colPlan.Width = 160;
             // 
-            // panel4
+            // colFecha
             // 
-            this.panel4.BackgroundImage = global::Modulo6.Properties.Resources.listshadow;
-            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel4.Controls.Add(this.panel5);
-            this.panel4.Controls.Add(this.lstv_Subject);
-            this.panel4.Location = new System.Drawing.Point(9, 227);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(704, 477);
-            this.panel4.TabIndex = 30;
-            // 
-            // lstv_Subject
-            // 
-            this.lstv_Subject.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7,
-            this.columnHeader8,
-            this.columnHeader9,
-            this.columnHeader10});
-            this.lstv_Subject.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstv_Subject.FullRowSelect = true;
-            this.lstv_Subject.GridLines = true;
-            this.lstv_Subject.Location = new System.Drawing.Point(22, 15);
-            this.lstv_Subject.Name = "lstv_Subject";
-            this.lstv_Subject.Size = new System.Drawing.Size(646, 416);
-            this.lstv_Subject.TabIndex = 1;
-            this.lstv_Subject.UseCompatibleStateImageBehavior = false;
-            this.lstv_Subject.View = System.Windows.Forms.View.Details;
-            this.lstv_Subject.SelectedIndexChanged += new System.EventHandler(this.lstv_Subject_SelectedIndexChanged);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Curso Id";
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Maestro Id";
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Maestro";
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Materia Id";
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Materia";
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Grupo Id";
-            // 
-            // columnHeader10
-            // 
-            this.columnHeader10.Text = "Grupo";
+            this.colFecha.Text = "Fecha";
+            this.colFecha.Width = 80;
             // 
             // panel3
             // 
@@ -669,24 +597,24 @@ namespace Modulo6._forms
             this.dgvPonderacion.AllowUserToOrderColumns = true;
             this.dgvPonderacion.AllowUserToResizeColumns = false;
             this.dgvPonderacion.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPonderacion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPonderacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPonderacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colNoPreguntaPond});
-            this.dgvPonderacion.Location = new System.Drawing.Point(267, 57);
+            this.colNoPreguntaPond,
+            this.colPonderacion});
+            this.dgvPonderacion.Location = new System.Drawing.Point(306, 57);
             this.dgvPonderacion.Name = "dgvPonderacion";
             this.dgvPonderacion.RowHeadersVisible = false;
-            this.dgvPonderacion.Size = new System.Drawing.Size(166, 382);
+            this.dgvPonderacion.Size = new System.Drawing.Size(127, 382);
             this.dgvPonderacion.TabIndex = 1;
-            // 
-            // colNoPreguntaPond
-            // 
-            this.colNoPreguntaPond.Frozen = true;
-            this.colNoPreguntaPond.HeaderText = "No";
-            this.colNoPreguntaPond.Name = "colNoPreguntaPond";
-            this.colNoPreguntaPond.ReadOnly = true;
-            this.colNoPreguntaPond.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colNoPreguntaPond.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colNoPreguntaPond.Width = 40;
+            this.dgvPonderacion.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvPonderacion_EditingControlShowing);
             // 
             // dgvRespuestas
             // 
@@ -695,32 +623,30 @@ namespace Modulo6._forms
             this.dgvRespuestas.AllowUserToOrderColumns = true;
             this.dgvRespuestas.AllowUserToResizeColumns = false;
             this.dgvRespuestas.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRespuestas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRespuestas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvRespuestas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRespuestas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colNoPregunta});
             this.dgvRespuestas.Location = new System.Drawing.Point(6, 57);
             this.dgvRespuestas.Name = "dgvRespuestas";
             this.dgvRespuestas.RowHeadersVisible = false;
-            this.dgvRespuestas.Size = new System.Drawing.Size(251, 382);
+            this.dgvRespuestas.Size = new System.Drawing.Size(294, 382);
             this.dgvRespuestas.TabIndex = 0;
             this.dgvRespuestas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRespuestas_CellClick);
-            this.dgvRespuestas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRespuestas_CellContentClick);
-            this.dgvRespuestas.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvRespuestas_EditingControlShowing);
             // 
             // colNoPregunta
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colNoPregunta.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colNoPregunta.DefaultCellStyle = dataGridViewCellStyle5;
             this.colNoPregunta.Frozen = true;
             this.colNoPregunta.HeaderText = "No";
             this.colNoPregunta.Name = "colNoPregunta";
@@ -728,6 +654,102 @@ namespace Modulo6._forms
             this.colNoPregunta.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.colNoPregunta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.colNoPregunta.Width = 40;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel5.BackgroundImage = global::Modulo6.Properties.Resources.small_form;
+            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel5.Controls.Add(this.linkLabel1);
+            this.panel5.Controls.Add(this.label20);
+            this.panel5.Controls.Add(this.label18);
+            this.panel5.Controls.Add(this.txt_Find);
+            this.panel5.Location = new System.Drawing.Point(405, 128);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(265, 116);
+            this.panel5.TabIndex = 29;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.Black;
+            this.linkLabel1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.ForeColor = System.Drawing.Color.Red;
+            this.linkLabel1.LinkColor = System.Drawing.Color.Yellow;
+            this.linkLabel1.Location = new System.Drawing.Point(110, 92);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(49, 13);
+            this.linkLabel1.TabIndex = 54;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Cerrar";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.Black;
+            this.label20.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label20.Location = new System.Drawing.Point(35, 18);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(205, 13);
+            this.label20.TabIndex = 53;
+            this.label20.Text = "Buscar por Nombre de Materia";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.Black;
+            this.label18.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label18.Location = new System.Drawing.Point(12, 49);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(135, 13);
+            this.label18.TabIndex = 51;
+            this.label18.Text = "Escribe Nombre de Materia";
+            // 
+            // txt_Find
+            // 
+            this.txt_Find.BackColor = System.Drawing.Color.Khaki;
+            this.txt_Find.Location = new System.Drawing.Point(15, 64);
+            this.txt_Find.Name = "txt_Find";
+            this.txt_Find.Size = new System.Drawing.Size(238, 20);
+            this.txt_Find.TabIndex = 50;
+            this.txt_Find.TextChanged += new System.EventHandler(this.txt_Find_TextChanged);
+            // 
+            // panel4
+            // 
+            this.panel4.BackgroundImage = global::Modulo6.Properties.Resources.listshadow;
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Controls.Add(this.lstv_Examen);
+            this.panel4.Location = new System.Drawing.Point(9, 227);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(704, 477);
+            this.panel4.TabIndex = 30;
+            // 
+            // colNoPreguntaPond
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.colNoPreguntaPond.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colNoPreguntaPond.Frozen = true;
+            this.colNoPreguntaPond.HeaderText = "No";
+            this.colNoPreguntaPond.Name = "colNoPreguntaPond";
+            this.colNoPreguntaPond.ReadOnly = true;
+            this.colNoPreguntaPond.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colNoPreguntaPond.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colNoPreguntaPond.Width = 40;
+            // 
+            // colPonderacion
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colPonderacion.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colPonderacion.HeaderText = "Ponder.";
+            this.colPonderacion.MaxInputLength = 6;
+            this.colPonderacion.Name = "colPonderacion";
+            this.colPonderacion.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colPonderacion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colPonderacion.Width = 60;
             // 
             // frmClave
             // 
@@ -752,9 +774,6 @@ namespace Modulo6._forms
             this.groupboxform.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -767,6 +786,9 @@ namespace Modulo6._forms
             this.grpReactivos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPonderacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRespuestas)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -783,9 +805,8 @@ namespace Modulo6._forms
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label lblMateriaId;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.ListView lstv_Subject;
+        private System.Windows.Forms.Label lblMateria;
+        private System.Windows.Forms.ListView lstv_Examen;
         private System.Windows.Forms.Label lbl_Mode;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
@@ -802,29 +823,22 @@ namespace Modulo6._forms
         private System.Windows.Forms.ToolStripButton btn_cancel;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton btn_close;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txt_Find;
-        private System.Windows.Forms.ComboBox cmbMaestro;
+        private System.Windows.Forms.ComboBox cboMateria;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.ColumnHeader columnHeader9;
-        private System.Windows.Forms.ColumnHeader columnHeader10;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader colMateriaId;
+        private System.Windows.Forms.ColumnHeader colMateria;
+        private System.Windows.Forms.ColumnHeader colPlan;
+        private System.Windows.Forms.ColumnHeader colFecha;
+        private System.Windows.Forms.ColumnHeader colClave;
         private System.Windows.Forms.Panel pnlReactivos;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.GroupBox grpReactivos;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtClaveId;
         private System.Windows.Forms.Label lblClave;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboPlan;
         private System.Windows.Forms.Label lblPlan;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtMateriaDesc;
+        private System.Windows.Forms.Label lblMateriaId;
         private System.Windows.Forms.DataGridView dgvPonderacion;
         private System.Windows.Forms.Button btnAsignarReactivos;
         private System.Windows.Forms.TextBox txtNumOpciones;
@@ -832,7 +846,14 @@ namespace Modulo6._forms
         private System.Windows.Forms.Label lblOpciones;
         private System.Windows.Forms.Label lblPreguntas;
         private System.Windows.Forms.DataGridView dgvRespuestas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNoPreguntaPond;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNoPregunta;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txt_Find;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNoPreguntaPond;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPonderacion;
     }
 }
