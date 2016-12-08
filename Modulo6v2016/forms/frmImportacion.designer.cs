@@ -56,6 +56,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblEntidad = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.btnParametrosGuardar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrevio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvColumnas)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -335,6 +336,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnParametrosGuardar);
             this.tabPage2.Controls.Add(this.btnImportar);
             this.tabPage2.Controls.Add(this.dgvColumnas);
             this.tabPage2.Controls.Add(this.cmbEntidades);
@@ -391,6 +393,16 @@
             this.label10.Size = new System.Drawing.Size(123, 23);
             this.label10.TabIndex = 4;
             this.label10.Text = "Importacion:";
+            // 
+            // btnParametrosGuardar
+            // 
+            this.btnParametrosGuardar.Location = new System.Drawing.Point(256, 301);
+            this.btnParametrosGuardar.Name = "btnParametrosGuardar";
+            this.btnParametrosGuardar.Size = new System.Drawing.Size(194, 23);
+            this.btnParametrosGuardar.TabIndex = 11;
+            this.btnParametrosGuardar.Text = "Guardar Parametros de Carga";
+            this.btnParametrosGuardar.UseVisualStyleBackColor = true;
+            this.btnParametrosGuardar.Click += new System.EventHandler(this.btnParametrosGuardar_Click);
             // 
             // frmImportacion
             // 
@@ -450,6 +462,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridViewComboBoxColumn dgcOrigen;
         private System.Windows.Forms.DataGridViewComboBoxColumn dgcDestino;
+        private System.Windows.Forms.Button btnParametrosGuardar;
     }
 }
 
