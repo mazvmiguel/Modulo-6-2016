@@ -30,13 +30,13 @@ namespace Modulo6._forms
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClave));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupboxform = new System.Windows.Forms.GroupBox();
-            this.cboPlan = new System.Windows.Forms.ComboBox();
+            this.txtPlanDesc = new System.Windows.Forms.TextBox();
             this.lblPlan = new System.Windows.Forms.Label();
             this.txtMateriaDesc = new System.Windows.Forms.TextBox();
             this.lblMateriaId = new System.Windows.Forms.Label();
@@ -48,15 +48,17 @@ namespace Modulo6._forms
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.btn_Add = new System.Windows.Forms.ToolStripButton();
             this.side1 = new System.Windows.Forms.ToolStripSeparator();
-            this.btn_Edit = new System.Windows.Forms.ToolStripButton();
+            this.btn_Save = new System.Windows.Forms.ToolStripButton();
             this.side2 = new System.Windows.Forms.ToolStripSeparator();
             this.btn_Delete = new System.Windows.Forms.ToolStripButton();
             this.side3 = new System.Windows.Forms.ToolStripSeparator();
             this.btn_Refresh = new System.Windows.Forms.ToolStripButton();
             this.side4 = new System.Windows.Forms.ToolStripSeparator();
-            this.btn_cancel = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.btn_close = new System.Windows.Forms.ToolStripButton();
+            this.btn_Cancel = new System.Windows.Forms.ToolStripButton();
+            this.side5 = new System.Windows.Forms.ToolStripSeparator();
+            this.btn_Carga = new System.Windows.Forms.ToolStripButton();
+            this.side6 = new System.Windows.Forms.ToolStripSeparator();
+            this.btn_Close = new System.Windows.Forms.ToolStripButton();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.lstv_Examen = new System.Windows.Forms.ListView();
             this.colClave = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -85,6 +87,8 @@ namespace Modulo6._forms
             this.lblOpciones = new System.Windows.Forms.Label();
             this.lblPreguntas = new System.Windows.Forms.Label();
             this.dgvPonderacion = new System.Windows.Forms.DataGridView();
+            this.colNoPreguntaPond = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPonderacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvRespuestas = new System.Windows.Forms.DataGridView();
             this.colNoPregunta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -93,8 +97,7 @@ namespace Modulo6._forms
             this.label18 = new System.Windows.Forms.Label();
             this.txt_Find = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.colNoPreguntaPond = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPonderacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAsignarPonderacion = new System.Windows.Forms.Button();
             this.groupboxform.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -111,7 +114,7 @@ namespace Modulo6._forms
             // groupboxform
             // 
             this.groupboxform.BackColor = System.Drawing.Color.Transparent;
-            this.groupboxform.Controls.Add(this.cboPlan);
+            this.groupboxform.Controls.Add(this.txtPlanDesc);
             this.groupboxform.Controls.Add(this.lblPlan);
             this.groupboxform.Controls.Add(this.txtMateriaDesc);
             this.groupboxform.Controls.Add(this.lblMateriaId);
@@ -126,14 +129,14 @@ namespace Modulo6._forms
             this.groupboxform.TabIndex = 25;
             this.groupboxform.TabStop = false;
             // 
-            // cboPlan
+            // txtPlanDesc
             // 
-            this.cboPlan.FormattingEnabled = true;
-            this.cboPlan.Location = new System.Drawing.Point(637, 34);
-            this.cboPlan.Name = "cboPlan";
-            this.cboPlan.Size = new System.Drawing.Size(135, 21);
-            this.cboPlan.TabIndex = 54;
-            this.toolTip1.SetToolTip(this.cboPlan, "Selecciona un Maestro");
+            this.txtPlanDesc.Location = new System.Drawing.Point(637, 34);
+            this.txtPlanDesc.Name = "txtPlanDesc";
+            this.txtPlanDesc.ReadOnly = true;
+            this.txtPlanDesc.Size = new System.Drawing.Size(135, 20);
+            this.txtPlanDesc.TabIndex = 54;
+            this.txtPlanDesc.TabStop = false;
             // 
             // lblPlan
             // 
@@ -151,7 +154,8 @@ namespace Modulo6._forms
             this.txtMateriaDesc.Name = "txtMateriaDesc";
             this.txtMateriaDesc.ReadOnly = true;
             this.txtMateriaDesc.Size = new System.Drawing.Size(135, 20);
-            this.txtMateriaDesc.TabIndex = 52;
+            this.txtMateriaDesc.TabIndex = 0;
+            this.txtMateriaDesc.TabStop = false;
             // 
             // lblMateriaId
             // 
@@ -168,7 +172,7 @@ namespace Modulo6._forms
             this.txtClaveId.Location = new System.Drawing.Point(22, 34);
             this.txtClaveId.Name = "txtClaveId";
             this.txtClaveId.Size = new System.Drawing.Size(135, 20);
-            this.txtClaveId.TabIndex = 50;
+            this.txtClaveId.TabIndex = 0;
             // 
             // lblClave
             // 
@@ -187,7 +191,7 @@ namespace Modulo6._forms
             this.cboMateria.Location = new System.Drawing.Point(181, 33);
             this.cboMateria.Name = "cboMateria";
             this.cboMateria.Size = new System.Drawing.Size(280, 21);
-            this.cboMateria.TabIndex = 16;
+            this.cboMateria.TabIndex = 1;
             this.toolTip1.SetToolTip(this.cboMateria, "Selecciona un Maestro");
             this.cboMateria.SelectedIndexChanged += new System.EventHandler(this.cmbMateria_SelectedIndexChanged);
             // 
@@ -219,15 +223,17 @@ namespace Modulo6._forms
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_Add,
             this.side1,
-            this.btn_Edit,
+            this.btn_Save,
             this.side2,
             this.btn_Delete,
             this.side3,
             this.btn_Refresh,
             this.side4,
-            this.btn_cancel,
-            this.toolStripSeparator2,
-            this.btn_close});
+            this.btn_Cancel,
+            this.side5,
+            this.btn_Carga,
+            this.side6,
+            this.btn_Close});
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(1164, 31);
@@ -248,14 +254,14 @@ namespace Modulo6._forms
             this.side1.Name = "side1";
             this.side1.Size = new System.Drawing.Size(6, 31);
             // 
-            // btn_Edit
+            // btn_Save
             // 
-            this.btn_Edit.Image = ((System.Drawing.Image)(resources.GetObject("btn_Edit.Image")));
-            this.btn_Edit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_Edit.Name = "btn_Edit";
-            this.btn_Edit.Size = new System.Drawing.Size(65, 28);
-            this.btn_Edit.Text = "&Editar";
-            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
+            this.btn_Save.Image = global::Modulo6.Properties.Resources.save;
+            this.btn_Save.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(77, 28);
+            this.btn_Save.Text = "&Guardar";
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // side2
             // 
@@ -291,27 +297,40 @@ namespace Modulo6._forms
             this.side4.Name = "side4";
             this.side4.Size = new System.Drawing.Size(6, 31);
             // 
-            // btn_cancel
+            // btn_Cancel
             // 
-            this.btn_cancel.Image = ((System.Drawing.Image)(resources.GetObject("btn_cancel.Image")));
-            this.btn_cancel.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.Size = new System.Drawing.Size(81, 28);
-            this.btn_cancel.Text = "&Cancelar";
+            this.btn_Cancel.Image = ((System.Drawing.Image)(resources.GetObject("btn_Cancel.Image")));
+            this.btn_Cancel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(81, 28);
+            this.btn_Cancel.Text = "&Cancelar";
             // 
-            // toolStripSeparator2
+            // side5
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 31);
+            this.side5.Name = "side5";
+            this.side5.Size = new System.Drawing.Size(6, 31);
             // 
-            // btn_close
+            // btn_Carga
             // 
-            this.btn_close.Image = ((System.Drawing.Image)(resources.GetObject("btn_close.Image")));
-            this.btn_close.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(67, 28);
-            this.btn_close.Text = "&Cerrar";
-            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
+            this.btn_Carga.Image = global::Modulo6.Properties.Resources.Upload_Document_128;
+            this.btn_Carga.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Carga.Name = "btn_Carga";
+            this.btn_Carga.Size = new System.Drawing.Size(106, 28);
+            this.btn_Carga.Text = "&Carga Masiva";
+            // 
+            // side6
+            // 
+            this.side6.Name = "side6";
+            this.side6.Size = new System.Drawing.Size(6, 31);
+            // 
+            // btn_Close
+            // 
+            this.btn_Close.Image = ((System.Drawing.Image)(resources.GetObject("btn_Close.Image")));
+            this.btn_Close.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_Close.Name = "btn_Close";
+            this.btn_Close.Size = new System.Drawing.Size(67, 28);
+            this.btn_Close.Text = "&Cerrar";
+            this.btn_Close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // lstv_Examen
             // 
@@ -527,6 +546,7 @@ namespace Modulo6._forms
             // grpReactivos
             // 
             this.grpReactivos.BackColor = System.Drawing.Color.Transparent;
+            this.grpReactivos.Controls.Add(this.btnAsignarPonderacion);
             this.grpReactivos.Controls.Add(this.btnAsignarReactivos);
             this.grpReactivos.Controls.Add(this.txtNumOpciones);
             this.grpReactivos.Controls.Add(this.txtNumPreguntas);
@@ -597,14 +617,14 @@ namespace Modulo6._forms
             this.dgvPonderacion.AllowUserToOrderColumns = true;
             this.dgvPonderacion.AllowUserToResizeColumns = false;
             this.dgvPonderacion.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPonderacion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPonderacion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPonderacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPonderacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colNoPreguntaPond,
@@ -616,6 +636,30 @@ namespace Modulo6._forms
             this.dgvPonderacion.TabIndex = 1;
             this.dgvPonderacion.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvPonderacion_EditingControlShowing);
             // 
+            // colNoPreguntaPond
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.colNoPreguntaPond.DefaultCellStyle = dataGridViewCellStyle7;
+            this.colNoPreguntaPond.Frozen = true;
+            this.colNoPreguntaPond.HeaderText = "No";
+            this.colNoPreguntaPond.Name = "colNoPreguntaPond";
+            this.colNoPreguntaPond.ReadOnly = true;
+            this.colNoPreguntaPond.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colNoPreguntaPond.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colNoPreguntaPond.Width = 40;
+            // 
+            // colPonderacion
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colPonderacion.DefaultCellStyle = dataGridViewCellStyle8;
+            this.colPonderacion.HeaderText = "Ponder.";
+            this.colPonderacion.MaxInputLength = 6;
+            this.colPonderacion.Name = "colPonderacion";
+            this.colPonderacion.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colPonderacion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colPonderacion.Width = 60;
+            // 
             // dgvRespuestas
             // 
             this.dgvRespuestas.AllowUserToAddRows = false;
@@ -623,14 +667,14 @@ namespace Modulo6._forms
             this.dgvRespuestas.AllowUserToOrderColumns = true;
             this.dgvRespuestas.AllowUserToResizeColumns = false;
             this.dgvRespuestas.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRespuestas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRespuestas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvRespuestas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRespuestas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colNoPregunta});
@@ -643,10 +687,10 @@ namespace Modulo6._forms
             // 
             // colNoPregunta
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colNoPregunta.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colNoPregunta.DefaultCellStyle = dataGridViewCellStyle10;
             this.colNoPregunta.Frozen = true;
             this.colNoPregunta.HeaderText = "No";
             this.colNoPregunta.Name = "colNoPregunta";
@@ -727,29 +771,17 @@ namespace Modulo6._forms
             this.panel4.Size = new System.Drawing.Size(704, 477);
             this.panel4.TabIndex = 30;
             // 
-            // colNoPreguntaPond
+            // btnAsignarPonderacion
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.colNoPreguntaPond.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colNoPreguntaPond.Frozen = true;
-            this.colNoPreguntaPond.HeaderText = "No";
-            this.colNoPreguntaPond.Name = "colNoPreguntaPond";
-            this.colNoPreguntaPond.ReadOnly = true;
-            this.colNoPreguntaPond.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colNoPreguntaPond.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colNoPreguntaPond.Width = 40;
-            // 
-            // colPonderacion
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colPonderacion.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colPonderacion.HeaderText = "Ponder.";
-            this.colPonderacion.MaxInputLength = 6;
-            this.colPonderacion.Name = "colPonderacion";
-            this.colPonderacion.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colPonderacion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colPonderacion.Width = 60;
+            this.btnAsignarPonderacion.BackColor = System.Drawing.Color.Khaki;
+            this.btnAsignarPonderacion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAsignarPonderacion.Location = new System.Drawing.Point(306, 30);
+            this.btnAsignarPonderacion.Name = "btnAsignarPonderacion";
+            this.btnAsignarPonderacion.Size = new System.Drawing.Size(127, 21);
+            this.btnAsignarPonderacion.TabIndex = 57;
+            this.btnAsignarPonderacion.Text = "Asignar Ponderación";
+            this.btnAsignarPonderacion.UseVisualStyleBackColor = false;
+            this.btnAsignarPonderacion.Click += new System.EventHandler(this.btnAsignarPonderacion_Click);
             // 
             // frmClave
             // 
@@ -814,15 +846,15 @@ namespace Modulo6._forms
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton btn_Add;
         private System.Windows.Forms.ToolStripSeparator side1;
-        private System.Windows.Forms.ToolStripButton btn_Edit;
+        private System.Windows.Forms.ToolStripButton btn_Save;
         private System.Windows.Forms.ToolStripSeparator side2;
         private System.Windows.Forms.ToolStripButton btn_Delete;
         private System.Windows.Forms.ToolStripSeparator side3;
         private System.Windows.Forms.ToolStripButton btn_Refresh;
         private System.Windows.Forms.ToolStripSeparator side4;
-        private System.Windows.Forms.ToolStripButton btn_cancel;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton btn_close;
+        private System.Windows.Forms.ToolStripButton btn_Cancel;
+        private System.Windows.Forms.ToolStripSeparator side5;
+        private System.Windows.Forms.ToolStripButton btn_Close;
         private System.Windows.Forms.ComboBox cboMateria;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ColumnHeader colMateriaId;
@@ -835,7 +867,6 @@ namespace Modulo6._forms
         private System.Windows.Forms.GroupBox grpReactivos;
         private System.Windows.Forms.TextBox txtClaveId;
         private System.Windows.Forms.Label lblClave;
-        private System.Windows.Forms.ComboBox cboPlan;
         private System.Windows.Forms.Label lblPlan;
         private System.Windows.Forms.TextBox txtMateriaDesc;
         private System.Windows.Forms.Label lblMateriaId;
@@ -855,5 +886,9 @@ namespace Modulo6._forms
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNoPreguntaPond;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPonderacion;
+        private System.Windows.Forms.ToolStripButton btn_Carga;
+        private System.Windows.Forms.ToolStripSeparator side6;
+        private System.Windows.Forms.TextBox txtPlanDesc;
+        private System.Windows.Forms.Button btnAsignarPonderacion;
     }
 }

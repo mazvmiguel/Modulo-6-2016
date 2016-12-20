@@ -1,183 +1,147 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Windows.Forms;
+
+//SICH 03DIC2016: 
 using System.Data;
-using System.Data.OleDb;
 using System.Data.SqlClient;
+
 namespace Modulo6.BUL
 {
-    class clsClave
+    public class clsClave
     {
+#region ATRIBUTOS
+        private string sClaveId;
+        private string sMateriaId;
+        private Int16 iPreguntasCantidad;
+        private Int16 iDistractoresCantidad;
+        private string sSolRConcentrado;
+        private string sPonderacion;
+#endregion
         
-        OleDbCommand comando = new OleDbCommand();
-        SqlCommand comandosql = new SqlCommand();
+#region PROPIEDADES
+        public string ClaveId {
+            get { return sClaveId; }
+            set { sClaveId = value; }
+        }
 
-        DAL.clsODBC clsCon = new Modulo6.DAL.clsODBC();
-        DAL.cls_myFunctions clsmyFunction = new Modulo6.DAL.cls_myFunctions();
-
-        public bool Validar()
+        public string MateriaId
         {
-           
+            get { return sMateriaId; }
+            set { sMateriaId = value; }
+        }
 
-            return true;
-
-
-        } //validar
-
-
-
-        public bool Guardar()
+        public Int16 PreguntasCantidad
         {
-            if (Validar() == true)
-            {
-                try
-                {
+            get { return iPreguntasCantidad; }
+            set { iPreguntasCantidad = value; }
+        }
 
-                    comando.CommandType = System.Data.CommandType.StoredProcedure;
+        public Int16 DistractoresCantidad
+        {
+            get { return iDistractoresCantidad; }
+            set { iDistractoresCantidad = value; }
+        }
 
-                    comando.CommandText = "proctClaveUpdate";
-                    comando.Parameters.Add("@ClaveId", OleDbType.VarChar);
-                    comando.Parameters.Add("@MateriaId", OleDbType.VarChar);
-                    comando.Parameters.Add("@PlanId", OleDbType.SmallInt);
-                    //comando.Parameters["@MateriaId"].Value = this.MateriaId;
-                    //comando.Parameters["@Materia"].Value = this.Materia;
-                    //comando.Parameters["@PlanId"].Value = this.PlanId;
+        public string SolRConcentrado
+        {
+            get { return sSolRConcentrado; }
+            set { sSolRConcentrado = value; }
+        }
 
-                    clsCon.cmdOpen(comando);
-                    clsCon.cmdClose(comando);
-                    clsmyFunction.setMessageBox("Datos guardados exitosamente", 1);
+        public string Ponderacion
+        {
+            get { return sPonderacion; }
+            set { sPonderacion = value; }
+        }
+        #endregion
 
-                }
-                catch (Exception exp)
-                {
-                    clsmyFunction.setCreateError(exp.Message);
+        public clsClave()
+        {
+            sClaveId = string.Empty;
+            sMateriaId = string.Empty;
+            iPreguntasCantidad = 0;
+            iDistractoresCantidad = 0;
+            sSolRConcentrado = string.Empty;
+            sPonderacion = string.Empty;
+        }
 
-                }
-                finally
-                {
-                    clsCon.cn.Close();
-                }
+        public clsClave(string sClaveId)
+        {
+            DataTable dt = new DataTable();
+            cConexion oConn = new cConexion(clsFuncionesComunes.Get_ConfigValue("ConnectionString"));
 
+            SqlCommand oCmdDatos = new SqlCommand("proctClaveSelect");
+            oCmdDatos.Parameters.Add("@ClaveId", SqlDbType.VarChar).Value = sClaveId;
+            oCmdDatos.CommandType = CommandType.StoredProcedure;
+
+            dt = oConn.Consultar(oCmdDatos);                        
+            asignarDatosObjeto(dt);            
+        }
+
+        public bool actualizarClave() {
+            cConexion oConn = new cConexion(clsFuncionesComunes.Get_ConfigValue("ConnectionString"));
+
+            SqlCommand oCmd = new SqlCommand("proctClaveUpdate");
+            oCmd.CommandType = CommandType.StoredProcedure;
+            oCmd.CommandTimeout = 3600;
+ 
+            oCmd.Parameters.Add("@ClaveId", SqlDbType.VarChar).Value = sClaveId;
+            oCmd.Parameters.Add("@MateriaId", SqlDbType.VarChar).Value = sMateriaId; 
+            oCmd.Parameters.Add("@PreguntasCantidad", SqlDbType.Int).Value = iPreguntasCantidad;
+            oCmd.Parameters.Add("@DistractoresCantidad", SqlDbType.Int).Value = iDistractoresCantidad;
+            oCmd.Parameters.Add("@Ponderacion", SqlDbType.VarChar).Value = sPonderacion;
+            oCmd.Parameters.Add("@SolRConcentrado", SqlDbType.VarChar).Value = sSolRConcentrado;
+            
+            try
+            {                                                    
+                oConn.Insert(oCmd);
+                return true;
             }
-
-
-            return true;
-
-
-        } //guardar
-
-        public bool Borrar()
-        {
-
-            DialogResult ret;
-            ret = MessageBox.Show("Esta seguro de borrar registro!", "Borrar".ToUpper(), MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-
-            if (Validar() == true && ret == DialogResult.Yes)
+            catch (Exception)
             {
-                try
-                {
-
-                    comando.CommandType = System.Data.CommandType.StoredProcedure;
-                    comando.CommandText = "proctClaveDelete";
-                    comando.Parameters.Add("@ClaveId", OleDbType.VarChar);
-                    //comando.Parameters["@MateriaId"].Value = this.MateriaId;
-                    clsCon.cmdOpen(comando);
-                    clsCon.cmdClose(comando);
-                    clsmyFunction.setMessageBox("Datos borrados exitosamente", 1);
-
-                }
-                catch (Exception exp)
-                {
-                    clsmyFunction.setCreateError(exp.Message);
-
-                }
-                finally
-                {
-                    clsCon.cn.Close();
-                }
-
+                return false;
             }
+        }
 
-
-            return true;
-
-
-        } //
-
-        public void CargaMasiva(DataSet ds)
+        public bool eliminarClave()
         {
-            //la logica es subir la tabla 0 del dataset como objeto Table definidi por el usuario
-            //hacemos una clonacion para cambiar al tipo de datos
+            cConexion oConn = new cConexion(clsFuncionesComunes.Get_ConfigValue("ConnectionString"));
+
+            SqlCommand oCmd = new SqlCommand("proctClaveDelete");
+            oCmd.CommandType = CommandType.StoredProcedure;
+            oCmd.CommandTimeout = 3600;
+
+            oCmd.Parameters.Add("@ClaveId", SqlDbType.VarChar).Value = sClaveId;            
+
             try
             {
-
-                comandosql.CommandType = CommandType.StoredProcedure;
-                comandosql.CommandText = "proctClaveBulkLoad";
-
-                DataTable table = new DataTable();
-                table = ds.Tables[0];
-
-                //validar que exista la columna Ponderacion
-                //si no existe crearla
-                
-                /*ordenando las columnas*/
-                //ClaveId,
-		        //MateriaId,
-		        //PreguntasCantidad,
-		        //DistractoresCantidad,
-		        //Ponderacion,
-		        //SolRConcentrado
-                
-                
-                if (ds.Tables[0].Columns.IndexOf("Ponderacion")<0)
-                {
-                    DataColumn Ponderacion = new DataColumn();
-                    Ponderacion.DataType = System.Type.GetType("System.String");
-                    Ponderacion.ColumnName = "Ponderacion";
-                    Ponderacion.Expression = "";
-                    ds.Tables[0].Columns.Add(Ponderacion);
-                }
-
-                table.Columns["ClaveId"].SetOrdinal(0);
-                table.Columns["MateriaId"].SetOrdinal(1);
-                table.Columns["PreguntasCantidad"].SetOrdinal(2);
-                table.Columns["DistractoresCantidad"].SetOrdinal(3);
-                table.Columns["Ponderacion"].SetOrdinal(4);
-                table.Columns["SolRConcentrado"].SetOrdinal(5);
-
-                //para cambiar el tipo de dato a cada columna, hay que clonar la tabla y luego importar
-                DataTable dtCloned = table.Clone();
-
-                dtCloned.Columns[0].DataType = typeof(string);
-                dtCloned.Columns[1].DataType = typeof(string);
-                dtCloned.Columns[2].DataType = typeof(Int16);
-                dtCloned.Columns[3].DataType = typeof(Int16);
-                dtCloned.Columns[4].DataType = typeof(string);
-                dtCloned.Columns[5].DataType = typeof(string);
-                
-                
-                foreach (DataRow row in table.Rows)
-                {
-                        dtCloned.ImportRow(row);
-                }
-                SqlParameter parameter;
-                parameter = comandosql.Parameters.AddWithValue("@zClave", dtCloned);
-                parameter.SqlDbType = SqlDbType.Structured;
-                parameter.TypeName = "dbo.zClave";
-
-                clsCon.cmdSQLOpen(comandosql);
-                clsCon.cmdSQLClose(comandosql);
-
-                clsmyFunction.setMessageBox("Datos guardados exitosamente", 1);
-
+                oConn.Insert(oCmd);
+                return true;
             }
-            catch (Exception exp)
+            catch (Exception)
             {
-                clsmyFunction.setCreateError(exp.Message);
+                return false;
+            }
+        }
 
+        private bool asignarDatosObjeto(DataTable oDT)
+        {
+            if (oDT.Rows.Count > 0)
+            {
+                sClaveId = oDT.Rows[0]["ClaveId"].ToString();
+                sMateriaId = oDT.Rows[0]["MateriaId"].ToString();
+                iPreguntasCantidad = Convert.ToInt16(oDT.Rows[0]["PreguntasCantidad"]);
+                iDistractoresCantidad= Convert.ToInt16(oDT.Rows[0]["DistractoresCantidad"]);
+                sSolRConcentrado = oDT.Rows[0]["SolRConcentrado"].ToString();
+                sPonderacion = oDT.Rows[0]["Ponderacion"].ToString(); ;
+
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
     }
-
 }

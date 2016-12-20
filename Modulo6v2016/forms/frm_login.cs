@@ -15,12 +15,10 @@ namespace Modulo6._forms
         {
             InitializeComponent();
         }
+
         DAL.clsODBC cls_ODBC=new Modulo6.DAL.clsODBC() ;
         _forms.MDIParent mdi_Parent = new MDIParent();
-
         
-
-
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -108,17 +106,14 @@ private void btn_Login_Click(object sender, EventArgs e)
                     Program.Usuario = com_uName.SelectedValue.ToString();
                     Program.PeriodoTrabajoId = cmbPeriodo.SelectedValue.ToString();
                     Program.UsuarioNombre = drpassword["u_name"].ToString();
-                    Program.PerfilId= Int16.Parse( drpassword["perfilid"].ToString());
+                    Program.PerfilId= Int16.Parse(drpassword["perfilid"].ToString());
 
                     cls_ODBC.cn.Close();
                     drpassword.Close();
                     cmdlogin.Dispose();
                     this.Dispose(true);
 
-                    mdi_Parent.Show();
-
-                    
-
+                    mdi_Parent.Show();                    
                 }
                 else
                 {

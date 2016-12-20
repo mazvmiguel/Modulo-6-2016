@@ -63,10 +63,10 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BUL\clsClave.cs" />
+    <Compile Include="BUL\clsClaveMAZV.cs" />
     <Compile Include="BUL\clsCurso.cs" />
     <Compile Include="BUL\clsEvaluacion.cs" />
-    <Compile Include="BUL\clsExamen.cs" />
+    <Compile Include="BUL\clsClave.cs" />
     <Compile Include="DAL\cConexion.cs" />
     <Compile Include="DAL\clsFuncionesComunes.cs" />
     <Compile Include="BUL\clsGrupo.cs" />

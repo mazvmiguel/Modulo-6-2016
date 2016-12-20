@@ -721,7 +721,7 @@ namespace Modulo6._forms
                             Grupo.CargaMasiva(dsnew);
                             break;
                         case "Claves":
-                            clsClave Clave= new clsClave();
+                            clsClaveMAZV Clave= new clsClaveMAZV();
                             Clave.CargaMasiva(dsnew);
                             break;
                         case "Evaluaciones":

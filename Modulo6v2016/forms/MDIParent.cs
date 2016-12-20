@@ -183,7 +183,7 @@ namespace Modulo6._forms
                     break;
 
                 case "Claves":
-                    frmClave fClave = new frmClave();
+                    frmClave fClave = new frmClave(false);
                     fClave.Show();
                     break;
 
